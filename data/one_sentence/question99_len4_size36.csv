@@ -1,0 +1,38 @@
+student_answer,teacher_answer,label,question_id
+The light bulb will not work.,The bulb will light.,0,99
+Only the light will light.,The bulb will light.,1,99
+Nothing will happen.,The bulb will light.,0,99
+The light bulb will light up.,The bulb will light.,1,99
+It is going to stop.,The bulb will light.,0,99
+The light will come on.,The bulb will light.,1,99
+The bulb will light.,The bulb will light.,1,99
+Nothing.,The bulb will light.,0,99
+The bulb will come on.,The bulb will light.,1,99
+The motor will run.,The bulb will light.,0,99
+The light bulb will run.,The bulb will light.,1,99
+The light bulb will lit.,The bulb will light.,1,99
+It will not work.,The bulb will light.,0,99
+It will turn on.,The bulb will light.,0,99
+The motor will run.,The bulb will light.,0,99
+The light bulb will cut on.,The bulb will light.,1,99
+I will start the motor and light.,The bulb will light.,1,99
+When she moves the switch to the left the light bulb will turn on.,The bulb will light.,1,99
+The energy will keep flowing.,The bulb will light.,0,99
+If she moves the switch to the left everything will turn on.,The bulb will light.,1,99
+The light will run.,The bulb will light.,1,99
+The light bulb will turn on.,The bulb will light.,1,99
+The light run.,The bulb will light.,1,99
+The bulb will light.,The bulb will light.,1,99
+The motor and light will run.,The bulb will light.,1,99
+The light and motor goes on.,The bulb will light.,1,99
+Only the light bulb will light.,The bulb will light.,1,99
+The light will turn on.,The bulb will light.,1,99
+If she moves the switch left the motor will not start and the light will not light up.,The bulb will light.,0,99
+The light bulb would light up.,The bulb will light.,1,99
+The light bulb will turn on.,The bulb will light.,1,99
+The light bulb will work and the motor will work.,The bulb will light.,1,99
+It would be a series.,The bulb will light.,0,99
+Both of the receivers will light.,The bulb will light.,1,99
+It will go off.,The bulb will light.,0,99
+"When the switch moves to the left, it will work.",The bulb will light.,0,99
+The bulb will light.,The bulb will light.,1,99

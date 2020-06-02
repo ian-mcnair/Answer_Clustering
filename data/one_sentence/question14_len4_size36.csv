@@ -1,0 +1,38 @@
+student_answer,teacher_answer,label,question_id
+Carbon Dioxide carbon dioxide.,The food contains sugar.,0,14
+There is sugar in the mixture.,The food contains sugar.,1,14
+The chemical reaction indicates that it has a lot of sugar in it.,The food contains sugar.,1,14
+It indicates that there is acid.,The food contains sugar.,0,14
+The chemical reaction indicates sugar.,The food contains sugar.,1,14
+The food has sugar in it.,The food contains sugar.,1,14
+"Chemical reaction means it has what you are looking for, sugar, acid, fat.",The food contains sugar.,1,14
+That it contains sugar.,The food contains sugar.,1,14
+That the food she tested did contain sugar.,The food contains sugar.,1,14
+This chemical indicates sugar.,The food contains sugar.,1,14
+It had acid.,The food contains sugar.,0,14
+It indicates that sugar is in the food.,The food contains sugar.,1,14
+It indicates that there is sugar in that food.,The food contains sugar.,1,14
+It indicates that sugar is in the food.,The food contains sugar.,1,14
+This means that there was acid and or sugar in the product.,The food contains sugar.,1,14
+It indicates that it has food in it.,The food contains sugar.,0,14
+It indicates there is sugar in the food.,The food contains sugar.,1,14
+It indicates that there is sugar in the food.,The food contains sugar.,1,14
+It indicates a sugar test to see how much sugar there is.,The food contains sugar.,1,14
+It probably has a lot of acid.,The food contains sugar.,0,14
+It indicates carbon dioxide.,The food contains sugar.,0,14
+That is has a lot of acid and vitamin C.,The food contains sugar.,0,14
+That there is sugar in the food.,The food contains sugar.,1,14
+That it has a lot of acid and sugar.,The food contains sugar.,1,14
+The reaction indicates that it has carbon dioxide.,The food contains sugar.,0,14
+The chemical reaction indicates sugar.,The food contains sugar.,1,14
+That there is acid present yeast indicates sugar.,The food contains sugar.,1,14
+That the food had sugar in it and carbon dioxide.,The food contains sugar.,1,14
+It indicates that the it has acid in it.,The food contains sugar.,0,14
+The reaction indicates that yeast contains acid.,The food contains sugar.,0,14
+The she tested sugar and it also indicates that the water was too hot.,The food contains sugar.,1,14
+The chemical indicated carbon dioxide and sugar.,The food contains sugar.,1,14
+It indicates how much sugar there is.,The food contains sugar.,1,14
+The chemical reaction indicates how much sugar is in the food.,The food contains sugar.,1,14
+That the food she tested had a lot of sugar and because she probably put sugar in it.,The food contains sugar.,1,14
+This chemical reaction indicates that there is sugar presence in the sample of the food.,The food contains sugar.,1,14
+The food contains sugar.,The food contains sugar.,1,14
