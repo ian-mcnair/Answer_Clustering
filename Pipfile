@@ -17,6 +17,7 @@ nltk = "*"
 spacy = "*"
 xlrd = "*"
 openpyxl = "*"
+seaborn = "*"
 
 [requires]
 python_version = "3.8"
