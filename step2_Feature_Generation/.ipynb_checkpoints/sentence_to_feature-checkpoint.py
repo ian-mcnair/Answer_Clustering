@@ -7,9 +7,18 @@ To Do
 [ ] Create a lemmatizer
 [ ] Figure out if cosine similarity is possible
 """
+#Spacy Imports
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 nlp = spacy.load("en_core_web_lg")
+
+#NLTK Imports
+from nltk.stem import PorterStemmer
+porter = PorterStemmer()
+
+#string imports
+import string
+from string import punctuation
 
 def remove_stopwords(doc):
     my_doc = nlp(doc)
@@ -25,8 +34,11 @@ def remove_stopwords(doc):
     return " ".join(filtered_sentence)
 
 
-def create_word_count(sentence):
+def word_count(sentence):
     return len(sentence.split(" "))
+
+def sentence_count(sentence):
+    return len(sentence.split(".")) + 1
     
 def jaccard_similarity(student_answer, teacher_answer):
     a = set(student_answer.split(" "))
@@ -52,17 +64,16 @@ def spacy_similarity(doc1, doc2):
     teacher_answer = nlp(doc2)
     return student_answer.similarity(teacher_answer)
 
+def porter_stem(sentence):
+    return " ".join([porter.stem(word) for word in sentence.split(" ")])
 
-# from collections import Counter
-# from sklearn.feature_extraction.text import CountVectorizer
-# from sklearn.metrics.pairwise import cosine_similarity
-# def get_cosine_sim(*strs): 
-#     vectors = [t for t in get_vectors(*strs)]
-#     return cosine_similarity(vectors)
-    
-# def get_vectors(sentence):
-#     sentece = sentence.replace(".", "")
-#     text = sentence.split(" ")
-#     vectorizer = CountVectorizer(text)
-#     vectorizer.fit(text)
-#     return vectorizer.transform(text).toarray()
+def reduce_sentence(sentence, stem=True):
+    # Strip punctuaton
+    sentence = sentence.translate(sentence.maketrans("","", string.punctuation))
+    #Remove Stop Words
+    sentence = remove_stopwords(sentence)
+    #Stem or Lem
+    if stem:
+        return porter_stem(sentence)
+    else:
+        return sentence
