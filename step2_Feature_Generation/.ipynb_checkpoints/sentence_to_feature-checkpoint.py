@@ -77,3 +77,7 @@ def reduce_sentence(sentence, stem=True):
         return porter_stem(sentence)
     else:
         return sentence
+    
+def order_sentence(sentence):
+    sentence = sorted(sentence.split(" "))
+    return " ".join(sentence)
