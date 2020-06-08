@@ -11,11 +11,14 @@ An accuracy of above 80% would be ideal!
 - [ ] Feature Engineering
 
   - [x] Word/Sentence count
+  - [ ] Stem / Lem
+    - [x] Porter Stem
+    - [ ] Lemmitization
   - [ ] Similarity measures
     - [x] Jaccard
     - [x] Spacy
     - [ ] Cosine/DIMSUM
-  - [ ]Entity Extractions
+  - [ ] Entity Extractions
     - [x] Single word
     - [ ] Bigram
     - [ ] Trigram
