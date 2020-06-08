@@ -79,11 +79,35 @@ def single_entity_extraction(df, sentence_col_name, answer):
     # Break sentence into list
     answer_list = answer.split(" ")
     
-    # Loop through each word in answer and check if single word exists in lists
-    length = len(df)
-    
     for word in answer_list:
         #Goes across each row
         df[f'has_{word}'] = df[sentence_col_name].apply(lambda sent: int(word in sent))
             
-    return df    
+    return df
+
+def bigram_entity_extraction(df, sentence_col_name, answer):
+    # Create list of bigrams
+    bigram_answer = create_list_of_bigrams(answer)
+    
+    # Need to compare bigrams to bigrams, below I am comparing
+    # one word to bigram which is always going to return false.
+    
+    for bigram in bigram_answer:
+        df[f'has_{bigram}'] = df[sentence_col_name].apply(lambda sent: int(bigram in sent))
+        
+    return df
+
+def create_list_of_bigrams(sentence):
+    sentence_list = sentence.split(" ")
+    bigram_list = [f"*_{sentence_list[0]}"]
+    
+    for i in range(len(sentence_list)):
+        
+        if i < len(sentence_list)-1:
+            print(i)
+            bigram_list.append(f"{sentence_list[i]}_{sentence_list[i+1]}")
+        else:
+            print(i)
+            bigram_list.append(f"{sentence_list[i]}_*")
+            
+    return bigram_list
