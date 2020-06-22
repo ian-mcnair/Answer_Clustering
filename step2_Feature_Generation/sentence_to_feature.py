@@ -4,33 +4,49 @@ All of these functions work by passing in a single sentence and returning the cr
 Some features may require the entire dataset or additional information
 
 To Do
-[ ] Create a lemmatizer
-[ ] Figure out if cosine similarity is possible
+[ ] Bigram (Still broken)
+[ ] Trigram (Still broken)
 
 List of Working Features:
 - Sentence Manipulation
     - Removing Stop words
     - Porter Stem
     - Alphabetical order
+    - Lem
 - Count
     - Word
     - Sentence
 - Similarity Measures
     - Jaccard
     - Spacy
+    - Generic
+    - Cosine
+- Entity Extraction
+    - Unigram
+    
 """
+# Math Imports
+import math
+
 #Spacy Imports
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
 nlp = spacy.load("en_core_web_lg")
 
 #NLTK Imports
+from nltk.stem.wordnet import WordNetLemmatizer
+lm = WordNetLemmatizer()
 from nltk.stem import PorterStemmer
 porter = PorterStemmer()
 
 #string imports
 import string
 from string import punctuation
+import re
+
+# Transformers
+from sklearn.preprocessing import MinMaxScaler
+
 
 # Sentence Manipulation #
 def remove_stopwords(doc):
@@ -49,6 +65,10 @@ def remove_stopwords(doc):
 def porter_stem(sentence):
     return " ".join([porter.stem(word) for word in sentence.split(" ")])
 
+def lemmatize_sentence(sentence):
+    lemma_sent = [lm.lemmatize(word) for word in sentence.split(" ")]
+    return " ".join(lemma_sent)
+
 def stem_sentence(sentence, stem=True):
     # Strip punctuaton
     sentence = sentence.translate(sentence.maketrans("","", string.punctuation))
@@ -61,17 +81,30 @@ def stem_sentence(sentence, stem=True):
         return sentence
     
 def order_sentence(sentence):
+    sentence = re.sub(r'[^\w\s]','',sentence)
+    sentence = sentence.lower()
     sentence = sorted(sentence.split(" "))
     return " ".join(sentence)
 
 # Generating general features #
 def word_count(sentence):
+    sentence = sentence.replace(".", "")
     return len(sentence.split(" "))
 
 def sentence_count(sentence):
-    return len(sentence.split("."))
+    return len(sentence.split("."))-1
 
 ################### similarity measures ####################
+def generic_similarity(sentence, answer):
+    tokens = set(sentence.split(" ") + answer.split(" "))
+    if '' in tokens:
+        tokens.remove('')
+    sentence_tokens = {token : "" for token in tokens}
+    count = 0
+    for word in tokens:
+        if word in sentence.split(" "):
+            count += 1
+    return count / len(tokens)  
 
 def jaccard_similarity(student_answer, teacher_answer):
     a = set(student_answer.split(" "))
@@ -81,37 +114,86 @@ def jaccard_similarity(student_answer, teacher_answer):
     
 def spacy_similarity(doc1, doc2):
     """
-    Uses spacys built-in word embeddings to do similarity measures
-    May need more testing as its probably not ideal if this is good at matching words
-    and not phrases
+    Going to remove all words but nouns and compare that way
     
-    Is there a way I could match a phrase?
     """
+    doc1 =  doc1.translate(doc1.maketrans("","", string.punctuation))
+    doc2 =  doc2.translate(doc1.maketrans("","", string.punctuation))
     student_answer = nlp(doc1)
+    student_answer = nlp(' '.join([str(x) for x in student_answer if x.pos_ in ['NOUN', 'PROPN']]))
     teacher_answer = nlp(doc2)
-    return student_answer.similarity(teacher_answer)
+    teacher_answer = nlp(' '.join([str(x) for x in teacher_answer if x.pos_ in ['NOUN', 'PROPN']]))
+#     print(f"Doc1 - {student_answer} -- Doc2 {teacher_answer}")
+    if len(student_answer) == 0 or len(teacher_answer) == 0:
+        return 0.0
+    else:
+        sim = teacher_answer.similarity(student_answer)
+#         print(sim)
+        return sim
+    
+def cosine_similarity(sentence, answer):
+    tokens = set(sentence.split(" ") + answer.split(" "))
+    if '' in tokens:
+        tokens.remove('')
+    answer_tokens = {token : "" for token in tokens}
+    sentence_tokens = {token : "" for token in tokens}
+
+    for word in tokens:
+        if word in answer.split(" "):
+            answer_tokens[word] = 1
+        else:
+            answer_tokens[word] = 0
+
+        if word in sentence.split(" "):
+            sentence_tokens[word] = 1
+        else:
+            sentence_tokens[word] = 0
+
+    dot_prod = 0
+    mag_s = 0
+    mag_a = 0
+    for word in tokens:
+        dot_prod += answer_tokens[word] * sentence_tokens[word]
+        mag_s += sentence_tokens[word] ** 2
+        mag_a += answer_tokens[word] ** 2
+
+    mag_s = math.sqrt(mag_s)
+    mag_a = math.sqrt(mag_a)
+    if mag_s * mag_a == 0:
+        return 0
+    else:
+        similarity = dot_prod / (mag_s * mag_a)
+        return round(similarity,4)
 
 ################### Entity Extraction ####################
-def unigram_entity_extraction(df, sentence_col_name, answer):
+def unigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
     """
     This breaks the sentence using spaces
     and then creates features based one each word
     """
+    answer = answer.replace(".","").lower().strip()
+    answer = answer.translate(answer.maketrans("","", string.punctuation))
+    answer = answer.replace("  "," ")
     # Break sentence into list
     answer_list = answer.split(" ")
     
     for word in answer_list:
         #Goes across each row
-        df[f'has_{word}'] = df[sentence_col_name].apply(lambda sent: int(word in sent))
+        df[f'{new_col_name}_has_{word}'] = df[sentence_col_name].apply(lambda sent: int(word in sent))
             
     return df
 
-def bigram_entity_extraction(df, sentence_col_name, answer):
+# Bigram and Trigram still broken
+# Basically, they aren't treating the sentence and answer the same
+def bigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
     """
     This works, but doesn't havea high match rate.
     More matches with the normal sentence, but it doesn't
     correlate to prediction it seems
     """
+    answer = answer.replace(".","").lower().strip()
+    answer = answer.translate(answer.maketrans("","", string.punctuation))
+    answer = answer.replace("  "," ")
     # Create list of bigrams for answer
     bigram_answer = create_list_of_bigrams(answer)
     
@@ -120,11 +202,14 @@ def bigram_entity_extraction(df, sentence_col_name, answer):
     
     for bigram in bigram_answer:
         bigram_ = bigram.replace(" ", "_")
-        df[f'has_{bigram_}'] = df[sentence_col_name].apply(lambda sent: int(bigram in sent))
+        df[f'{new_col_name}_has_{bigram_}'] = df[sentence_col_name].apply(lambda sent: int(bigram in sent))
         
     return df
 
 def create_list_of_bigrams(sentence):
+    sentence = sentence.replace(".","").lower().strip()
+    sentence = sentence.translate(sentence.maketrans("","", string.punctuation))
+    sentence = sentence.replace("  "," ")
     sentence_list = sentence.split(" ")
     bigram_list = []
 
@@ -136,16 +221,22 @@ def create_list_of_bigrams(sentence):
             
     return bigram_list
 
-def trigram_entity_extraction(df, sentence_col_name, answer):
+def trigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
+    answer = answer.replace(".","").lower().strip()
+    answer = answer.translate(answer.maketrans("","", string.punctuation))
+    answer = answer.replace("  "," ")
     trigram_answer = create_list_of_trigrams(answer)
    
     for trigram in trigram_answer:
         trigram_ = trigram.replace(" ", "_")
-        df[f'has_{trigram_}'] = df[sentence_col_name].apply(lambda sent: int(trigram in sent))
+        df[f'{new_col_name}_has_{trigram_}'] = df[sentence_col_name].apply(lambda sent: int(trigram in sent))
         
     return df
 
 def create_list_of_trigrams(sentence):
+    sentence = sentence.replace(".","").lower().strip()
+    sentence = sentence.translate(sentence.maketrans("","", string.punctuation))
+    sentence = sentence.replace("  "," ")
     sentence_list = sentence.split(" ")
     trigram_list = []
 
@@ -157,10 +248,17 @@ def create_list_of_trigrams(sentence):
             
     return trigram_list
 
+################### Transforming ####################
+def scale_column(df, col):
+    sc = MinMaxScaler()
+    return sc.fit_transform(df[col].values.reshape(-1,1))
+
 ################### Feature Reduction ####################
+from sklearn.feature_selection import VarianceThreshold
 def drop_column_if_all_same(df):
     """
-    This scans each row and drops any column
+    This scans each row and drops any column that
+    has the same value
+    Ignores last row since that is the answer row
     """
-    df.loc[:, (df != 0).any(axis=0)]
-    return df
+    
