@@ -4,8 +4,9 @@ All of these functions work by passing in a single sentence and returning the cr
 Some features may require the entire dataset or additional information
 
 To Do
-[ ] Bigram (Still broken)
-[ ] Trigram (Still broken)
+[x] Remove Low Variance Features
+[ ] Assign Unique id
+[ ] Save 2 seperate datasets
 
 List of Working Features:
 - Sentence Manipulation
@@ -23,8 +24,13 @@ List of Working Features:
     - Cosine
 - Entity Extraction
     - Unigram
+    - Bigram
+    - Trigram
     
 """
+# Data
+import pandas as pd
+
 # Math Imports
 import math
 
@@ -44,8 +50,9 @@ import string
 from string import punctuation
 import re
 
-# Transformers
+# Transformers and Feature Selection
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.feature_selection import VarianceThreshold
 
 
 # Sentence Manipulation #
@@ -126,12 +133,10 @@ def spacy_similarity(doc1, doc2):
     student_answer = nlp(' '.join([str(x) for x in student_answer if x.pos_ in ['NOUN', 'PROPN']]))
     teacher_answer = nlp(doc2)
     teacher_answer = nlp(' '.join([str(x) for x in teacher_answer if x.pos_ in ['NOUN', 'PROPN']]))
-#     print(f"Doc1 - {student_answer} -- Doc2 {teacher_answer}")
     if len(student_answer) == 0 or len(teacher_answer) == 0:
         return 0.0
     else:
         sim = teacher_answer.similarity(student_answer)
-#         print(sim)
         return sim
     
 def cosine_similarity(sentence, answer):
@@ -242,14 +247,26 @@ def scale_column(df, col):
     return sc.fit_transform(df[col].values.reshape(-1,1))
 
 ################### Feature Reduction ####################
-from sklearn.feature_selection import VarianceThreshold
-def drop_column_if_all_same(df):
-    """
-    This scans each row and drops any column that
-    has the same value
-    Ignores last row since that is the answer row
-    """
-    
-def save_feature_set():
-    return
+def drop_low_variance_features(df, idx_start,threshold = 0.0):
+    left = df.iloc[:, :idx_start]
+    right = df.iloc[:, idx_start:]
+    selector = VarianceThreshold(threshold)
+    best_features = selector.fit_transform(right)
+    right = right.loc[:,selector.get_support()]
+    df = pd.concat([left,right], axis = 1)
+    return df
 
+def save_feature_set(df, idx_start, path, filename):
+    left = df.iloc[:, :idx_start]
+    right = df.iloc[:, idx_start:]
+    
+    left.to_csv(
+        path + filename + 'doc.csv',
+        index = False
+    )
+    print("Saved document data")
+    right.to_csv(
+        path + filename + 'data.csv',
+        index = False
+    )
+    print("Saved numerical data")
