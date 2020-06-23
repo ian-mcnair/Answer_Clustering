@@ -11,17 +11,18 @@ An accuracy of above 80% would be ideal!
 - [ ] Feature Engineering
 
   - [x] Word/Sentence count
-  - [ ] Stem / Lem
+  - [x] Stem / Lem
     - [x] Porter Stem
-    - [ ] Lemmitization
+    - [x] Lemmitization
   - [ ] Similarity measures
     - [x] Jaccard
     - [x] Spacy
-    - [ ] Cosine/DIMSUM
+    - [x] Cosine
+    - [x] Generic
   - [ ] Entity Extractions
     - [x] Single word
-    - [ ] Bigram
-    - [ ] Trigram
+    - [ ] Bigram (Broken)
+    - [ ] Trigram (Broken)
   - [ ] Utilizing Word2Vec or Word embedding
   
 - [ ] Feature Reduction and Selection
