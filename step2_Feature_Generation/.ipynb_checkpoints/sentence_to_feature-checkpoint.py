@@ -4,20 +4,26 @@ All of these functions work by passing in a single sentence and returning the cr
 Some features may require the entire dataset or additional information
 
 To Do
-[ ] Create a lemmatizer
-[ ] Figure out if cosine similarity is possible
+[ ] Bigram (Still broken)
+[ ] Trigram (Still broken)
 
 List of Working Features:
 - Sentence Manipulation
     - Removing Stop words
     - Porter Stem
     - Alphabetical order
+    - Lem
 - Count
     - Word
     - Sentence
 - Similarity Measures
     - Jaccard
     - Spacy
+    - Generic
+    - Cosine
+- Entity Extraction
+    - Unigram
+    
 """
 # Math Imports
 import math
@@ -43,7 +49,14 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 # Sentence Manipulation #
+def clean_sentence(sentence):
+    sentence = sentence.replace(".","").lower().strip()
+    sentence = sentence.translate(sentence.maketrans("","", string.punctuation))
+    sentence = sentence.replace("  "," ")
+    return sentence
+
 def remove_stopwords(doc):
+    doc = clean_sentence(doc)
     my_doc = nlp(doc)
     token_list = []
     for token in my_doc:
@@ -56,27 +69,23 @@ def remove_stopwords(doc):
             filtered_sentence.append(word) 
     return " ".join(filtered_sentence)
 
-def porter_stem(sentence):
-    return " ".join([porter.stem(word) for word in sentence.split(" ")])
-
 def lemmatize_sentence(sentence):
+    sentence = clean_sentence(sentence)
+    sentence = remove_stopwords(sentence)
     lemma_sent = [lm.lemmatize(word) for word in sentence.split(" ")]
     return " ".join(lemma_sent)
 
 def stem_sentence(sentence, stem=True):
     # Strip punctuaton
-    sentence = sentence.translate(sentence.maketrans("","", string.punctuation))
+    sentence = clean_sentence(sentence)
     #Remove Stop Words
     sentence = remove_stopwords(sentence)
     #Stem or Lem
-    if stem:
-        return porter_stem(sentence)
-    else:
-        return sentence
+    sentence = clean_sentence(sentence)
+    return " ".join([porter.stem(word) for word in sentence.split(" ")])
     
 def order_sentence(sentence):
-    sentence = re.sub(r'[^\w\s]','',sentence)
-    sentence = sentence.lower()
+    sentence = clean_sentence(sentence)
     sentence = sorted(sentence.split(" "))
     return " ".join(sentence)
 
@@ -177,21 +186,14 @@ def unigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
             
     return df
 
+# Bigram and Trigram still broken
+# Basically, they aren't treating the sentence and answer the same
 def bigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
-    """
-    This works, but doesn't havea high match rate.
-    More matches with the normal sentence, but it doesn't
-    correlate to prediction it seems
-    """
-    answer = answer.replace(".","").lower().strip()
-    answer = answer.translate(answer.maketrans("","", string.punctuation))
-    answer = answer.replace("  "," ")
+
+    answer = clean_sentence(answer)
     # Create list of bigrams for answer
     bigram_answer = create_list_of_bigrams(answer)
-    
-    # Need to compare bigrams to bigrams, below I am comparing
-    # one word to bigram which is always going to return false.
-    
+ 
     for bigram in bigram_answer:
         bigram_ = bigram.replace(" ", "_")
         df[f'{new_col_name}_has_{bigram_}'] = df[sentence_col_name].apply(lambda sent: int(bigram in sent))
@@ -199,9 +201,7 @@ def bigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
     return df
 
 def create_list_of_bigrams(sentence):
-    sentence = sentence.replace(".","").lower().strip()
-    sentence = sentence.translate(sentence.maketrans("","", string.punctuation))
-    sentence = sentence.replace("  "," ")
+    sentence = clean_sentence(sentence)
     sentence_list = sentence.split(" ")
     bigram_list = []
 
@@ -210,13 +210,11 @@ def create_list_of_bigrams(sentence):
         # For index out of bounds error prrevention
         if i < len(sentence_list)-1:
             bigram_list.append(f"{sentence_list[i]} {sentence_list[i+1]}")
-            
+    print(bigram_list)
     return bigram_list
 
 def trigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
-    answer = answer.replace(".","").lower().strip()
-    answer = answer.translate(answer.maketrans("","", string.punctuation))
-    answer = answer.replace("  "," ")
+    answer = clean_sentence(answer)
     trigram_answer = create_list_of_trigrams(answer)
    
     for trigram in trigram_answer:
@@ -226,9 +224,7 @@ def trigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
     return df
 
 def create_list_of_trigrams(sentence):
-    sentence = sentence.replace(".","").lower().strip()
-    sentence = sentence.translate(sentence.maketrans("","", string.punctuation))
-    sentence = sentence.replace("  "," ")
+    sentence = clean_sentence(sentence)
     sentence_list = sentence.split(" ")
     trigram_list = []
 
@@ -254,3 +250,6 @@ def drop_column_if_all_same(df):
     Ignores last row since that is the answer row
     """
     
+def save_feature_set():
+    return
+
