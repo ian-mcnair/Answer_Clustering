@@ -246,12 +246,14 @@ def scale_column(df, col):
 
 ################### Feature Reduction ####################
 from sklearn.feature_selection import VarianceThreshold
-def drop_column_if_all_same(df):
-    """
-    This scans each row and drops any column that
-    has the same value
-    Ignores last row since that is the answer row
-    """
+def drop_low_variance_features(df, idx_start,threshold = 0.0):
+    left = df.iloc[:, :idx_start]
+    right = df.iloc[:, idx_start:]
+    selector = VarianceThreshold(threshold)
+    best_features = selector.fit_transform(right)
+    right = right.loc[:,selector.get_support()]
+    df = pd.concat([left,right], axis = 1)
+    return df
     
 def save_feature_set():
     return
