@@ -1,0 +1,106 @@
+student_answer,teacher_answer,label,question_id,q_stopwords,q_stemmed,q_stem_ordered,q_lemm,q_lemm_ordered,q_stopwords_ordered
+Because it is sticky!,The rubber band vibrates.,0,13,sticky,sticki,sticki,sticky,sticky,sticky
+Because it hits the other side.,The rubber band vibrates.,0,13,hits,hit,hit,hit,hit,hits
+Because vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat,vibration,vibration,vibration
+It makes the plucking sound from stretching and then it vibrates and make sound.,The rubber band vibrates.,1,13,makes plucking sound stretching vibrates sound,make pluck sound stretch vibrat sound,make pluck sound sound stretch vibrat,make plucking sound stretching vibrates sound,make plucking sound sound stretching vibrates,makes plucking sound sound stretching vibrates
+Because if you stretch it and let it go it makes a volume.,The rubber band vibrates.,0,13,stretch let makes volume,stretch let make volum,let make stretch volum,stretch let make volume,let make stretch volume,let makes stretch volume
+Plucking is pull.,The rubber band vibrates.,0,13,plucking pull,pluck pull,pluck pull,plucking pull,plucking pull,plucking pull
+Because it hits the other part of the rubber band.,The rubber band vibrates.,0,13,hits rubber band,hit rubber band,band hit rubber,hit rubber band,band hit rubber,band hits rubber
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+Because your making vibrations.,The rubber band vibrates.,1,13,making vibrations,make vibrat,make vibrat,making vibration,making vibration,making vibrations
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+Because the vibrations.,The rubber band vibrates.,1,13,vibrations,vibrat,vibrat,vibration,vibration,vibrations
+Because it is tight.,The rubber band vibrates.,0,13,tight,tight,tight,tight,tight,tight
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat,vibrating,vibrating,vibrating
+Vibrations.,The rubber band vibrates.,1,13,vibrations,vibrat,vibrat,vibration,vibration,vibrations
+The rubber band makes a sound because it is on the doorknob.,The rubber band vibrates.,0,13,rubber band makes sound doorknob,rubber band make sound doorknob,band doorknob make rubber sound,rubber band make sound doorknob,band doorknob make rubber sound,band doorknob makes rubber sound
+Because it is like a string.,The rubber band vibrates.,0,13,like string,like string,like string,like string,like string,like string
+It vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat,vibration,vibration,vibration
+Because it goes up.,The rubber band vibrates.,0,13,goes,goe,goe,go,go,goes
+It makes a sound.,The rubber band vibrates.,0,13,makes sound,make sound,make sound,make sound,make sound,makes sound
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat,vibrating,vibrating,vibrating
+Guitars have wires that makes sound Just like a rubber band.,The rubber band vibrates.,0,13,guitars wires makes sound like rubber band,guitar wire make sound like rubber band,band guitar like make rubber sound wire,guitar wire make sound like rubber band,band guitar like make rubber sound wire,band guitars like makes rubber sound wires
+Because it hits something.,The rubber band vibrates.,0,13,hits,hit,hit,hit,hit,hits
+Because your finger smacks on it.,The rubber band vibrates.,0,13,finger smacks,finger smack,finger smack,finger smack,finger smack,finger smacks
+It will make a soft sound.,The rubber band vibrates.,0,13,soft sound,soft sound,soft sound,soft sound,soft sound,soft sound
+It vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+It makes noise.,The rubber band vibrates.,0,13,makes noise,make nois,make nois,make noise,make noise,makes noise
+Because it is.,The rubber band vibrates.,0,13,,,,,,
+When you let go it vibrates.,The rubber band vibrates.,1,13,let vibrates,let vibrat,let vibrat,let vibrates,let vibrates,let vibrates
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat,vibrating,vibrating,vibrating
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+Because each side of the rubber band will snap together.,The rubber band vibrates.,0,13,rubber band snap,rubber band snap,band rubber snap,rubber band snap,band rubber snap,band rubber snap
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+It makes it louder.,The rubber band vibrates.,0,13,makes louder,make louder,louder make,make louder,louder make,louder makes
+It is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat,vibrating,vibrating,vibrating
+If you have something close to the rubber band it would hit it and make noise.,The rubber band vibrates.,0,13,close rubber band hit noise,close rubber band hit nois,band close hit nois rubber,close rubber band hit noise,band close hit noise rubber,band close hit noise rubber
+Because vibration runs through it.,The rubber band vibrates.,1,13,vibration runs,vibrat run,run vibrat,vibration run,run vibration,runs vibration
+Because you stretch it and then it is tight.,The rubber band vibrates.,0,13,stretch tight,stretch tight,stretch tight,stretch tight,stretch tight,stretch tight
+Because each side hits each other and make noise.,The rubber band vibrates.,0,13,hits noise,hit nois,hit nois,hit noise,hit noise,hits noise
+It vibrates off the other side.,The rubber band vibrates.,0,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+Low.,The rubber band vibrates.,0,13,low,low,low,low,low,low
+Because of the vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat,vibration,vibration,vibration
+It cuts through.,The rubber band vibrates.,0,13,cuts,cut,cut,cut,cut,cuts
+When you let it go you can see it make a vibration that makes the sound.,The rubber band vibrates.,1,13,let vibration makes sound,let vibrat make sound,let make sound vibrat,let vibration make sound,let make sound vibration,let makes sound vibration
+There is vibrations.,The rubber band vibrates.,1,13,vibrations,vibrat,vibrat,vibration,vibration,vibrations
+The rubber band is low.,The rubber band vibrates.,0,13,rubber band low,rubber band low,band low rubber,rubber band low,band low rubber,band low rubber
+It is like a guitar string only rubber.,The rubber band vibrates.,0,13,like guitar string rubber,like guitar string rubber,guitar like rubber string,like guitar string rubber,guitar like rubber string,guitar like rubber string
+By the vibrations.,The rubber band vibrates.,1,13,vibrations,vibrat,vibrat,vibration,vibration,vibrations
+The rubber band would make a high pitch.,The rubber band vibrates.,0,13,rubber band high pitch,rubber band high pitch,band high pitch rubber,rubber band high pitch,band high pitch rubber,band high pitch rubber
+Because the rubber band vibrates.,The rubber band vibrates.,1,13,rubber band vibrates,rubber band vibrat,band rubber vibrat,rubber band vibrates,band rubber vibrates,band rubber vibrates
+Because the rubber band is vibrating.,The rubber band vibrates.,1,13,rubber band vibrating,rubber band vibrat,band rubber vibrat,rubber band vibrating,band rubber vibrating,band rubber vibrating
+Because when you pluck it it makes the vibrations and vibrations make sound.,The rubber band vibrates.,1,13,pluck makes vibrations vibrations sound,pluck make vibrat vibrat sound,make pluck sound vibrat vibrat,pluck make vibration vibration sound,make pluck sound vibration vibration,makes pluck sound vibrations vibrations
+Because the 2 parts bump against each other.,The rubber band vibrates.,0,13,2 parts bump,2 part bump,2 bump part,2 part bump,2 bump part,2 bump parts
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat,vibrating,vibrating,vibrating
+It moves fast enough to make a sound.,The rubber band vibrates.,1,13,moves fast sound,move fast sound,fast move sound,move fast sound,fast move sound,fast moves sound
+Because of the vibrations it makes.,The rubber band vibrates.,1,13,vibrations makes,vibrat make,make vibrat,vibration make,make vibration,makes vibrations
+Because there is a vibration on the rubber band.,The rubber band vibrates.,1,13,vibration rubber band,vibrat rubber band,band rubber vibrat,vibration rubber band,band rubber vibration,band rubber vibration
+Because all things make sound.,The rubber band vibrates.,0,13,things sound,thing sound,sound thing,thing sound,sound thing,sound things
+A rhythm.,The rubber band vibrates.,0,13,rhythm,rhythm,rhythm,rhythm,rhythm,rhythm
+It will make a soft sound.,The rubber band vibrates.,0,13,soft sound,soft sound,soft sound,soft sound,soft sound,soft sound
+A rubber band makes a sound because vibration are made and sounds come from vibrations.,The rubber band vibrates.,1,13,rubber band makes sound vibration sounds come vibrations,rubber band make sound vibrat sound come vibrat,band come make rubber sound sound vibrat vibrat,rubber band make sound vibration sound come vibration,band come make rubber sound sound vibration vibration,band come makes rubber sound sounds vibration vibrations
+Because it hit the top and makes it vibrate.,The rubber band vibrates.,1,13,hit makes vibrate,hit make vibrat,hit make vibrat,hit make vibrate,hit make vibrate,hit makes vibrate
+"Because you stretch it, then you pluck it.",The rubber band vibrates.,0,13,stretch pluck,stretch pluck,pluck stretch,stretch pluck,pluck stretch,pluck stretch
+Because our hand is causing it to make a sound.,The rubber band vibrates.,0,13,hand causing sound,hand caus sound,caus hand sound,hand causing sound,causing hand sound,causing hand sound
+Because when you pluck it the rudder band touches the top part.,The rubber band vibrates.,0,13,pluck rudder band touches,pluck rudder band touch,band pluck rudder touch,pluck rudder band touch,band pluck rudder touch,band pluck rudder touches
+Because it rubber.,The rubber band vibrates.,0,13,rubber,rubber,rubber,rubber,rubber,rubber
+It hit the first one.,The rubber band vibrates.,0,13,hit,hit,hit,hit,hit,hit
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat,vibrating,vibrating,vibrating
+When you pull it and it hits the other part.,The rubber band vibrates.,0,13,pull hits,pull hit,hit pull,pull hit,hit pull,hits pull
+Because it hits the top.,The rubber band vibrates.,0,13,hits,hit,hit,hit,hit,hits
+Because you make it vibrate.,The rubber band vibrates.,1,13,vibrate,vibrat,vibrat,vibrate,vibrate,vibrate
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+It hits your finger.,The rubber band vibrates.,0,13,hits finger,hit finger,finger hit,hit finger,finger hit,finger hits
+"Because the rubber band vibrated, and vibration caused sound.",The rubber band vibrates.,1,13,rubber band vibrated vibration caused sound,rubber band vibrat vibrat caus sound,band caus rubber sound vibrat vibrat,rubber band vibrated vibration caused sound,band caused rubber sound vibrated vibration,band caused rubber sound vibrated vibration
+Because of the vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat,vibration,vibration,vibration
+It does that because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat,vibrating,vibrating,vibrating
+Because there is a vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat,vibration,vibration,vibration
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat,vibrating,vibrating,vibrating
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+"Because if you pull it, it goes like that.",The rubber band vibrates.,0,13,pull goes like,pull goe like,goe like pull,pull go like,go like pull,goes like pull
+Because it snaps together.,The rubber band vibrates.,0,13,snaps,snap,snap,snap,snap,snaps
+Because it is gently.,The rubber band vibrates.,0,13,gently,gentli,gentli,gently,gently,gently
+Because it snaps.,The rubber band vibrates.,0,13,snaps,snap,snap,snap,snap,snaps
+Pull it.,The rubber band vibrates.,0,13,pull,pull,pull,pull,pull,pull
+It makes the sound softer.,The rubber band vibrates.,0,13,makes sound softer,make sound softer,make softer sound,make sound softer,make softer sound,makes softer sound
+It is rubber.,The rubber band vibrates.,0,13,rubber,rubber,rubber,rubber,rubber,rubber
+You pulled and it flies.,The rubber band vibrates.,0,13,pulled flies,pull fli,fli pull,pulled fly,fly pulled,flies pulled
+It makes sound.,The rubber band vibrates.,0,13,makes sound,make sound,make sound,make sound,make sound,makes sound
+Because of the vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat,vibration,vibration,vibration
+It will make a doom sound.,The rubber band vibrates.,0,13,doom sound,doom sound,doom sound,doom sound,doom sound,doom sound
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat,vibrates,vibrates,vibrates
+When you pluck a rubber band and let it go it moves back and forth which makes it vibrate.,The rubber band vibrates.,1,13,pluck rubber band let moves forth makes vibrate,pluck rubber band let move forth make vibrat,band forth let make move pluck rubber vibrat,pluck rubber band let move forth make vibrate,band forth let make move pluck rubber vibrate,band forth let makes moves pluck rubber vibrate
+Because you can make you hand is hurt.,The rubber band vibrates.,0,13,hand hurt,hand hurt,hand hurt,hand hurt,hand hurt,hand hurt
+I think because it vibrating.,The rubber band vibrates.,1,13,think vibrating,think vibrat,think vibrat,think vibrating,think vibrating,think vibrating
+It will say: dinininin!,The rubber band vibrates.,0,13,dinininin,dinininin,dinininin,dinininin,dinininin,dinininin
+It moves back and forth makes vibration.,The rubber band vibrates.,1,13,moves forth makes vibration,move forth make vibrat,forth make move vibrat,move forth make vibration,forth make move vibration,forth makes moves vibration
+Because it is making vibration.,The rubber band vibrates.,1,13,making vibration,make vibrat,make vibrat,making vibration,making vibration,making vibration
+Because it hits your Finger.,The rubber band vibrates.,0,13,hits finger,hit finger,finger hit,hit finger,finger hit,finger hits
+It makes a sound because it vibrates.,The rubber band vibrates.,1,13,makes sound vibrates,make sound vibrat,make sound vibrat,make sound vibrates,make sound vibrates,makes sound vibrates
+Because when you pull it. It hits your thumb.,The rubber band vibrates.,0,13,pull hits thumb,pull hit thumb,hit pull thumb,pull hit thumb,hit pull thumb,hits pull thumb
+Sound like Pum!,The rubber band vibrates.,0,13,sound like pum,sound like pum,like pum sound,sound like pum,like pum sound,like pum sound
+So it could a sound.,The rubber band vibrates.,0,13,sound,sound,sound,sound,sound,sound
+Because it vibrates and vibration makes Sound.,The rubber band vibrates.,1,13,vibrates vibration makes sound,vibrat vibrat make sound,make sound vibrat vibrat,vibrates vibration make sound,make sound vibrates vibration,makes sound vibrates vibration
+The rubber band vibrates.,The rubber band vibrates.,1,13,rubber band vibrates,rubber band vibrat,band rubber vibrat,rubber band vibrates,band rubber vibrates,band rubber vibrates

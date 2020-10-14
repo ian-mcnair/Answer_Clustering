@@ -32,27 +32,27 @@ List of Working Features:
 import pandas as pd
 
 # Math Imports
-# import math
+import math
 
-# #Spacy Imports
-# import spacy
-# from spacy.lang.en.stop_words import STOP_WORDS
-# nlp = spacy.load("en_core_web_lg")
+#Spacy Imports
+import spacy
+from spacy.lang.en.stop_words import STOP_WORDS
+nlp = spacy.load("en_core_web_lg")
 
-# #NLTK Imports
-# from nltk.stem.wordnet import WordNetLemmatizer
-# lm = WordNetLemmatizer()
-# from nltk.stem import PorterStemmer
-# porter = PorterStemmer()
+#NLTK Imports
+from nltk.stem.wordnet import WordNetLemmatizer
+lm = WordNetLemmatizer()
+from nltk.stem import PorterStemmer
+porter = PorterStemmer()
 
-# #string imports
-# import string
-# from string import punctuation
-# import re
+#string imports
+import string
+from string import punctuation
+import re
 
-# # Transformers and Feature Selection
-# from sklearn.preprocessing import MinMaxScaler
-# from sklearn.feature_selection import VarianceThreshold
+# Transformers and Feature Selection
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.feature_selection import VarianceThreshold
 
 
 # Sentence Manipulation #
