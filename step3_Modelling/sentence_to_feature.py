@@ -30,6 +30,7 @@ List of Working Features:
 """
 # Data
 import pandas as pd
+import numpy as np
 
 # Math Imports
 import math
@@ -215,7 +216,7 @@ def create_list_of_bigrams(sentence):
         # For index out of bounds error prrevention
         if i < len(sentence_list)-1:
             bigram_list.append(f"{sentence_list[i]} {sentence_list[i+1]}")
-    print(bigram_list)
+#     print(bigram_list)
     return bigram_list
 
 def trigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
@@ -242,9 +243,10 @@ def create_list_of_trigrams(sentence):
     return trigram_list
 
 ################### Transforming ####################
-def scale_column(df, col):
-    sc = MinMaxScaler()
-    return sc.fit_transform(df[col].values.reshape(-1,1))
+def scale_column(sc, count):
+    # Train the scaler on the old data
+    # Use the sc to transform the sentence
+    return sc.transform(np.array([[count]]))[0][0]
 
 ################### Feature Reduction ####################
 def drop_low_variance_features(df, idx_start,threshold = 0.0):
