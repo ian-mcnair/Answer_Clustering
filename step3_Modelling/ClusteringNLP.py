@@ -72,12 +72,12 @@ class Clustering_NLP:
         a_lem = sf.lemmatize_sentence(self.teacher_answer)
         a_lem_ordered = sf.order_sentence(a_lem)
         teacher_answers = [
-#             a_stopwords,
-#             a_stopwords_ordered,
+            a_stopwords,
+            a_stopwords_ordered,
             a_stemmed,
             a_stemmed_ordered,
-#             a_lem,
-#             a_lem_ordered,
+            a_lem,
+            a_lem_ordered,
         ]
         
         # Change sentence into multiple versions
@@ -111,12 +111,10 @@ class Clustering_NLP:
 #         Lem Sim
 #         log['lem_g_similarity'] = sf.generic_similarity(log['q_lemm'], a_lem)
 #         log['lem_j_similarity'] = sf.jaccard_similarity(log['q_lemm'], a_lem)
-#         log['lem_s_similarity'] = sf.spacy_similarity(log['q_lemm'], a_lem)
 #         log['lem_c_similarity'] = sf.cosine_similarity(log['q_lemm'], a_lem)
-#        # Lem sim ordered
+# #        # Lem sim ordered
 #         log['lem_ordered_g_similarity'] = sf.generic_similarity(log['q_lemm_ordered'], a_lem_ordered)
 #         log['lem_ordered_j_similarity'] = sf.jaccard_similarity(log['q_lemm_ordered'], a_lem_ordered)
-#         log['lem_ordered_s_similarity'] = sf.spacy_similarity(log['q_lemm_ordered'], a_lem_ordered)
 #         log['lem_ordered_c_similarity'] = sf.cosine_similarity(log['q_lemm_ordered'], a_lem_ordered)
         
         # Appending New Answer
@@ -138,8 +136,8 @@ class Clustering_NLP:
         for sent_type, teach_ans in zip(types_of_sentences, teacher_answers):
             
             self.new_answers = sf.unigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
-            self.new_answers = sf.bigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
-            self.new_answers = sf.trigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
+#             self.new_answers = sf.bigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
+#             self.new_answers = sf.trigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
         
 
         

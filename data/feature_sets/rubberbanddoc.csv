@@ -1,38 +1,106 @@
-student_answer,teacher_answer,label,question_id,q_stopwords,q_stemmed,q_stem_ordered,q_lemm,q_lemm_ordered,q_stopwords_ordered
-By letting it sit in a dish for a day.,"The water was evaporated, leaving the salt.",0,25,letting sit dish day,let sit dish day,day dish let sit,letting sit dish day,day dish letting sit,day dish letting sit
-Let the water evaporate and the salt is left behind.,"The water was evaporated, leaving the salt.",1,25,let water evaporate salt left,let water evapor salt left,evapor left let salt water,let water evaporate salt left,evaporate left let salt water,evaporate left let salt water
-The water evaporated and left salt crystals.,"The water was evaporated, leaving the salt.",1,25,water evaporated left salt crystals,water evapor left salt crystal,crystal evapor left salt water,water evaporated left salt crystal,crystal evaporated left salt water,crystals evaporated left salt water
-I saw a pinkish grayish color that was blocking the water.,"The water was evaporated, leaving the salt.",0,25,saw pinkish grayish color blocking water,saw pinkish grayish color block water,block color grayish pinkish saw water,saw pinkish grayish color blocking water,blocking color grayish pinkish saw water,blocking color grayish pinkish saw water
-You have to slowly tip the vial for only the water to go.,"The water was evaporated, leaving the salt.",0,25,slowly tip vial water,slowli tip vial water,slowli tip vial water,slowly tip vial water,slowly tip vial water,slowly tip vial water
-"By pouring the water and salt into the thing, and letting the water evaporate.","The water was evaporated, leaving the salt.",1,25,pouring water salt thing letting water evaporate,pour water salt thing let water evapor,evapor let pour salt thing water water,pouring water salt thing letting water evaporate,evaporate letting pouring salt thing water water,evaporate letting pouring salt thing water water
-By slowly pouring it in a tray.,"The water was evaporated, leaving the salt.",0,25,slowly pouring tray,slowli pour tray,pour slowli tray,slowly pouring tray,pouring slowly tray,pouring slowly tray
-The water evaporated so there was only salt left.,"The water was evaporated, leaving the salt.",1,25,water evaporated salt left,water evapor salt left,evapor left salt water,water evaporated salt left,evaporated left salt water,evaporated left salt water
-We put the water with the salt in it and put it outside for the water to evaporate.,"The water was evaporated, leaving the salt.",1,25,water salt outside water evaporate,water salt outsid water evapor,evapor outsid salt water water,water salt outside water evaporate,evaporate outside salt water water,evaporate outside salt water water
-I separated the salt from the water because the salt are on the rocks that are on the bottom and the water is on the top.,"The water was evaporated, leaving the salt.",0,25,separated salt water salt rocks water,separ salt water salt rock water,rock salt salt separ water water,separated salt water salt rock water,rock salt salt separated water water,rocks salt salt separated water water
-Because you can see salt in water.,"The water was evaporated, leaving the salt.",0,25,salt water,salt water,salt water,salt water,salt water,salt water
-I let the water evaporate.,"The water was evaporated, leaving the salt.",1,25,let water evaporate,let water evapor,evapor let water,let water evaporate,evaporate let water,evaporate let water
-The water dried up and left the salt.,"The water was evaporated, leaving the salt.",1,25,water dried left salt,water dri left salt,dri left salt water,water dried left salt,dried left salt water,dried left salt water
-We let the water evaporate.,"The water was evaporated, leaving the salt.",1,25,let water evaporate,let water evapor,evapor let water,let water evaporate,evaporate let water,evaporate let water
-The water dried up.,"The water was evaporated, leaving the salt.",1,25,water dried,water dri,dri water,water dried,dried water,dried water
-You just get water and the smashed mock rock and put the smashed rock and water together.,"The water was evaporated, leaving the salt.",0,25,water smashed mock rock smashed rock water,water smash mock rock smash rock water,mock rock rock smash smash water water,water smashed mock rock smashed rock water,mock rock rock smashed smashed water water,mock rock rock smashed smashed water water
-"You put the water, a little bit, in a cup and leave it overnight.","The water was evaporated, leaving the salt.",0,25,water little bit cup leave overnight,water littl bit cup leav overnight,bit cup leav littl overnight water,water little bit cup leave overnight,bit cup leave little overnight water,bit cup leave little overnight water
-We evaporated the salt from the water because the water evaporated and separated.,"The water was evaporated, leaving the salt.",1,25,evaporated salt water water evaporated separated,evapor salt water water evapor separ,evapor evapor salt separ water water,evaporated salt water water evaporated separated,evaporated evaporated salt separated water water,evaporated evaporated salt separated water water
-We put the water and salt in the Petri dish. The water evaporated and the salt became crystals.,"The water was evaporated, leaving the salt.",1,25,water salt petri dish water evaporated salt crystals,water salt petri dish water evapor salt crystal,crystal dish evapor petri salt salt water water,water salt petri dish water evaporated salt crystal,crystal dish evaporated petri salt salt water water,crystals dish evaporated petri salt salt water water
-We poured the salt into a Petri dish and poured the water out.,"The water was evaporated, leaving the salt.",0,25,poured salt petri dish poured water,pour salt petri dish pour water,dish petri pour pour salt water,poured salt petri dish poured water,dish petri poured poured salt water,dish petri poured poured salt water
-By the Petri dish.,"The water was evaporated, leaving the salt.",0,25,petri dish,petri dish,dish petri,petri dish,dish petri,dish petri
-By putting water in a Petri dish and letting the water evaporate.,"The water was evaporated, leaving the salt.",1,25,putting water petri dish letting water evaporate,put water petri dish let water evapor,dish evapor let petri put water water,putting water petri dish letting water evaporate,dish evaporate letting petri putting water water,dish evaporate letting petri putting water water
-Poured the top of the vial out.,"The water was evaporated, leaving the salt.",0,25,poured vial,pour vial,pour vial,poured vial,poured vial,poured vial
-The salt dissolved and the water evaporated and the salt went to the bottom.,"The water was evaporated, leaving the salt.",1,25,salt dissolved water evaporated salt went,salt dissolv water evapor salt went,dissolv evapor salt salt water went,salt dissolved water evaporated salt went,dissolved evaporated salt salt water went,dissolved evaporated salt salt water went
-We put it in a evaporation dish and the water evaporated.,"The water was evaporated, leaving the salt.",1,25,evaporation dish water evaporated,evapor dish water evapor,dish evapor evapor water,evaporation dish water evaporated,dish evaporated evaporation water,dish evaporated evaporation water
-I put it on the evaporating dish.,"The water was evaporated, leaving the salt.",1,25,evaporating dish,evapor dish,dish evapor,evaporating dish,dish evaporating,dish evaporating
-By pouring the water into the salt.,"The water was evaporated, leaving the salt.",0,25,pouring water salt,pour water salt,pour salt water,pouring water salt,pouring salt water,pouring salt water
-We poured the water out of the bottle.,"The water was evaporated, leaving the salt.",0,25,poured water bottle,pour water bottl,bottl pour water,poured water bottle,bottle poured water,bottle poured water
-Letting the water evaporate.,"The water was evaporated, leaving the salt.",1,25,letting water evaporate,let water evapor,evapor let water,letting water evaporate,evaporate letting water,evaporate letting water
-Put it on a dish and then the water gets in the air and the salt stays.,"The water was evaporated, leaving the salt.",1,25,dish water gets air salt stays,dish water get air salt stay,air dish get salt stay water,dish water get air salt stay,air dish get salt stay water,air dish gets salt stays water
-I do not know.,"The water was evaporated, leaving the salt.",0,25,know,know,know,know,know,know
-The salt separated with the water because the salt was heavier but the water was not even heavy.,"The water was evaporated, leaving the salt.",0,25,salt separated water salt heavier water heavy,salt separ water salt heavier water heavi,heavi heavier salt salt separ water water,salt separated water salt heavier water heavy,heavier heavy salt salt separated water water,heavier heavy salt salt separated water water
-We put the water in a clear cup and let it sit and the water evaporated and the salt stayed.,"The water was evaporated, leaving the salt.",1,25,water clear cup let sit water evaporated salt stayed,water clear cup let sit water evapor salt stay,clear cup evapor let salt sit stay water water,water clear cup let sit water evaporated salt stayed,clear cup evaporated let salt sit stayed water water,clear cup evaporated let salt sit stayed water water
-I put some water in a dish and let the water evaporate so the salt would stay.,"The water was evaporated, leaving the salt.",1,25,water dish let water evaporate salt stay,water dish let water evapor salt stay,dish evapor let salt stay water water,water dish let water evaporate salt stay,dish evaporate let salt stay water water,dish evaporate let salt stay water water
-Evaporate.,"The water was evaporated, leaving the salt.",0,25,evaporate,evapor,evapor,evaporate,evaporate,evaporate
-The crystals were salt.,"The water was evaporated, leaving the salt.",0,25,crystals salt,crystal salt,crystal salt,crystal salt,crystal salt,crystals salt
-"The water was evaporated, leaving the salt.","The water was evaporated, leaving the salt.",1,25,water evaporated leaving salt,water evapor leav salt,evapor leav salt water,water evaporated leaving salt,evaporated leaving salt water,evaporated leaving salt water
+student_answer,teacher_answer,label,question_id,q_stopwords,q_stemmed,q_stem_ordered
+Because it is sticky!,The rubber band vibrates.,0,13,sticky,sticki,sticki
+Because it hits the other side.,The rubber band vibrates.,0,13,hits,hit,hit
+Because vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat
+It makes the plucking sound from stretching and then it vibrates and make sound.,The rubber band vibrates.,1,13,makes plucking sound stretching vibrates sound,make pluck sound stretch vibrat sound,make pluck sound sound stretch vibrat
+Because if you stretch it and let it go it makes a volume.,The rubber band vibrates.,0,13,stretch let makes volume,stretch let make volum,let make stretch volum
+Plucking is pull.,The rubber band vibrates.,0,13,plucking pull,pluck pull,pluck pull
+Because it hits the other part of the rubber band.,The rubber band vibrates.,0,13,hits rubber band,hit rubber band,band hit rubber
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+Because your making vibrations.,The rubber band vibrates.,1,13,making vibrations,make vibrat,make vibrat
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+Because the vibrations.,The rubber band vibrates.,1,13,vibrations,vibrat,vibrat
+Because it is tight.,The rubber band vibrates.,0,13,tight,tight,tight
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat
+Vibrations.,The rubber band vibrates.,1,13,vibrations,vibrat,vibrat
+The rubber band makes a sound because it is on the doorknob.,The rubber band vibrates.,0,13,rubber band makes sound doorknob,rubber band make sound doorknob,band doorknob make rubber sound
+Because it is like a string.,The rubber band vibrates.,0,13,like string,like string,like string
+It vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat
+Because it goes up.,The rubber band vibrates.,0,13,goes,goe,goe
+It makes a sound.,The rubber band vibrates.,0,13,makes sound,make sound,make sound
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat
+Guitars have wires that makes sound Just like a rubber band.,The rubber band vibrates.,0,13,guitars wires makes sound like rubber band,guitar wire make sound like rubber band,band guitar like make rubber sound wire
+Because it hits something.,The rubber band vibrates.,0,13,hits,hit,hit
+Because your finger smacks on it.,The rubber band vibrates.,0,13,finger smacks,finger smack,finger smack
+It will make a soft sound.,The rubber band vibrates.,0,13,soft sound,soft sound,soft sound
+It vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+It makes noise.,The rubber band vibrates.,0,13,makes noise,make nois,make nois
+Because it is.,The rubber band vibrates.,0,13,,,
+When you let go it vibrates.,The rubber band vibrates.,1,13,let vibrates,let vibrat,let vibrat
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+Because each side of the rubber band will snap together.,The rubber band vibrates.,0,13,rubber band snap,rubber band snap,band rubber snap
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+It makes it louder.,The rubber band vibrates.,0,13,makes louder,make louder,louder make
+It is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat
+If you have something close to the rubber band it would hit it and make noise.,The rubber band vibrates.,0,13,close rubber band hit noise,close rubber band hit nois,band close hit nois rubber
+Because vibration runs through it.,The rubber band vibrates.,1,13,vibration runs,vibrat run,run vibrat
+Because you stretch it and then it is tight.,The rubber band vibrates.,0,13,stretch tight,stretch tight,stretch tight
+Because each side hits each other and make noise.,The rubber band vibrates.,0,13,hits noise,hit nois,hit nois
+It vibrates off the other side.,The rubber band vibrates.,0,13,vibrates,vibrat,vibrat
+Low.,The rubber band vibrates.,0,13,low,low,low
+Because of the vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat
+It cuts through.,The rubber band vibrates.,0,13,cuts,cut,cut
+When you let it go you can see it make a vibration that makes the sound.,The rubber band vibrates.,1,13,let vibration makes sound,let vibrat make sound,let make sound vibrat
+There is vibrations.,The rubber band vibrates.,1,13,vibrations,vibrat,vibrat
+The rubber band is low.,The rubber band vibrates.,0,13,rubber band low,rubber band low,band low rubber
+It is like a guitar string only rubber.,The rubber band vibrates.,0,13,like guitar string rubber,like guitar string rubber,guitar like rubber string
+By the vibrations.,The rubber band vibrates.,1,13,vibrations,vibrat,vibrat
+The rubber band would make a high pitch.,The rubber band vibrates.,0,13,rubber band high pitch,rubber band high pitch,band high pitch rubber
+Because the rubber band vibrates.,The rubber band vibrates.,1,13,rubber band vibrates,rubber band vibrat,band rubber vibrat
+Because the rubber band is vibrating.,The rubber band vibrates.,1,13,rubber band vibrating,rubber band vibrat,band rubber vibrat
+Because when you pluck it it makes the vibrations and vibrations make sound.,The rubber band vibrates.,1,13,pluck makes vibrations vibrations sound,pluck make vibrat vibrat sound,make pluck sound vibrat vibrat
+Because the 2 parts bump against each other.,The rubber band vibrates.,0,13,2 parts bump,2 part bump,2 bump part
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat
+It moves fast enough to make a sound.,The rubber band vibrates.,1,13,moves fast sound,move fast sound,fast move sound
+Because of the vibrations it makes.,The rubber band vibrates.,1,13,vibrations makes,vibrat make,make vibrat
+Because there is a vibration on the rubber band.,The rubber band vibrates.,1,13,vibration rubber band,vibrat rubber band,band rubber vibrat
+Because all things make sound.,The rubber band vibrates.,0,13,things sound,thing sound,sound thing
+A rhythm.,The rubber band vibrates.,0,13,rhythm,rhythm,rhythm
+It will make a soft sound.,The rubber band vibrates.,0,13,soft sound,soft sound,soft sound
+A rubber band makes a sound because vibration are made and sounds come from vibrations.,The rubber band vibrates.,1,13,rubber band makes sound vibration sounds come vibrations,rubber band make sound vibrat sound come vibrat,band come make rubber sound sound vibrat vibrat
+Because it hit the top and makes it vibrate.,The rubber band vibrates.,1,13,hit makes vibrate,hit make vibrat,hit make vibrat
+"Because you stretch it, then you pluck it.",The rubber band vibrates.,0,13,stretch pluck,stretch pluck,pluck stretch
+Because our hand is causing it to make a sound.,The rubber band vibrates.,0,13,hand causing sound,hand caus sound,caus hand sound
+Because when you pluck it the rudder band touches the top part.,The rubber band vibrates.,0,13,pluck rudder band touches,pluck rudder band touch,band pluck rudder touch
+Because it rubber.,The rubber band vibrates.,0,13,rubber,rubber,rubber
+It hit the first one.,The rubber band vibrates.,0,13,hit,hit,hit
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat
+When you pull it and it hits the other part.,The rubber band vibrates.,0,13,pull hits,pull hit,hit pull
+Because it hits the top.,The rubber band vibrates.,0,13,hits,hit,hit
+Because you make it vibrate.,The rubber band vibrates.,1,13,vibrate,vibrat,vibrat
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+It hits your finger.,The rubber band vibrates.,0,13,hits finger,hit finger,finger hit
+"Because the rubber band vibrated, and vibration caused sound.",The rubber band vibrates.,1,13,rubber band vibrated vibration caused sound,rubber band vibrat vibrat caus sound,band caus rubber sound vibrat vibrat
+Because of the vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat
+It does that because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat
+Because there is a vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat
+Because it is vibrating.,The rubber band vibrates.,1,13,vibrating,vibrat,vibrat
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+"Because if you pull it, it goes like that.",The rubber band vibrates.,0,13,pull goes like,pull goe like,goe like pull
+Because it snaps together.,The rubber band vibrates.,0,13,snaps,snap,snap
+Because it is gently.,The rubber band vibrates.,0,13,gently,gentli,gentli
+Because it snaps.,The rubber band vibrates.,0,13,snaps,snap,snap
+Pull it.,The rubber band vibrates.,0,13,pull,pull,pull
+It makes the sound softer.,The rubber band vibrates.,0,13,makes sound softer,make sound softer,make softer sound
+It is rubber.,The rubber band vibrates.,0,13,rubber,rubber,rubber
+You pulled and it flies.,The rubber band vibrates.,0,13,pulled flies,pull fli,fli pull
+It makes sound.,The rubber band vibrates.,0,13,makes sound,make sound,make sound
+Because of the vibration.,The rubber band vibrates.,1,13,vibration,vibrat,vibrat
+It will make a doom sound.,The rubber band vibrates.,0,13,doom sound,doom sound,doom sound
+Because it vibrates.,The rubber band vibrates.,1,13,vibrates,vibrat,vibrat
+When you pluck a rubber band and let it go it moves back and forth which makes it vibrate.,The rubber band vibrates.,1,13,pluck rubber band let moves forth makes vibrate,pluck rubber band let move forth make vibrat,band forth let make move pluck rubber vibrat
+Because you can make you hand is hurt.,The rubber band vibrates.,0,13,hand hurt,hand hurt,hand hurt
+I think because it vibrating.,The rubber band vibrates.,1,13,think vibrating,think vibrat,think vibrat
+It will say: dinininin!,The rubber band vibrates.,0,13,dinininin,dinininin,dinininin
+It moves back and forth makes vibration.,The rubber band vibrates.,1,13,moves forth makes vibration,move forth make vibrat,forth make move vibrat
+Because it is making vibration.,The rubber band vibrates.,1,13,making vibration,make vibrat,make vibrat
+Because it hits your Finger.,The rubber band vibrates.,0,13,hits finger,hit finger,finger hit
+It makes a sound because it vibrates.,The rubber band vibrates.,1,13,makes sound vibrates,make sound vibrat,make sound vibrat
+Because when you pull it. It hits your thumb.,The rubber band vibrates.,0,13,pull hits thumb,pull hit thumb,hit pull thumb
+Sound like Pum!,The rubber band vibrates.,0,13,sound like pum,sound like pum,like pum sound
+So it could a sound.,The rubber band vibrates.,0,13,sound,sound,sound
+Because it vibrates and vibration makes Sound.,The rubber band vibrates.,1,13,vibrates vibration makes sound,vibrat vibrat make sound,make sound vibrat vibrat
+The rubber band vibrates.,The rubber band vibrates.,1,13,rubber band vibrates,rubber band vibrat,band rubber vibrat
