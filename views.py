@@ -4,9 +4,8 @@ import streamlit as st
 import text
 import base64
 from ClusteringNLP import Clustering_NLP
-from sklearn.metrics import accuracy_score, confusion_matrix
-# import charts
-# import views
+from sklearn.metrics import accuracy_score
+import charts
 # import tools
 # from geopy.geocoders import Nominatim
 
@@ -95,7 +94,7 @@ def clustering():
     display = (
         'How do you separate the water and salt from saltwater?', 
         'Which temperature system was Bill using if he considered 28 degree warm?',
-        'How can Lee check if this object is conductive?',
+        'How can Wendy get current to flow through the battery?',
         'After being heated, a Maillard reaction occurs. What does this indicate the presence of?'
     )
     num = st.radio(
@@ -107,7 +106,7 @@ def clustering():
     files = {
         0: ['saltwaterdoc.csv','saltwaterdata.csv'],
         1: ['celciusdoc.csv', 'celciusdata.csv'],
-        2: ['circuitdoc.csv', 'circuitdata.csv'],
+        2: ['batterydoc.csv', 'batterydata.csv'],
         3: ['sugardoc.csv', 'sugardata.csv'],
     }
 
@@ -121,25 +120,41 @@ def clustering():
     doc_flag = st.checkbox('Display Question Info')
     data_flag = st.checkbox('Display Prediction Data')
     model_flag = st.checkbox('Display Model Info and Performance')
-    chart_flag = st.checkbox('Display Reduced-Dimensionality Chart')
+#     chart_flag = st.checkbox('Display Reduced-Dimensionality Chart')
     
     
     if doc_flag:
-        st.markdown('### Question Info')
+        st.markdown('## Question Info')
         st.write(doc)
     if data_flag:
-        st.markdown('### Prediction Data')
+        st.markdown('## Prediction Data')
         st.write(data)
+        st.write(pd.Series(data.columns, name = 'Features'))
     if model_flag:
-        st.markdown('### Model Data')
-        
+        st.markdown('## Model Data')
         nlp = Clustering_NLP(data, doc)
-        st.write(nlp)
         nlp.correct_cluster_labels()
-        st.write(nlp.accuracy())
-        st.write(confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
-    if chart_flag:
-        st.markdown('place holder')
+        st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
+        st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
+        
+        
+        results = doc[['student_answer', 'label', 'cluster']]
+        explore_flag = st.checkbox('Explore Data')
+        if explore_flag:
+            st.markdown(f"""**Dataset Length: {len(results)}** """)
+            start = st.number_input('Start', value = 0)
+            end = st.number_input('End', value = 5)
+            st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
+            for i in range(int(start),int(end)+1):
+                st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'cluster'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
+
+                
+        
+#     if chart_flag:
+#         st.markdown('### Charts')
+        
+        
+   
         
 def classification():
     pass
