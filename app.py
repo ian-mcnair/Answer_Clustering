@@ -5,10 +5,11 @@ import text
 # import charts
 import views
 
-def run_app():
+def run():
     st.sidebar.markdown("# Navigation")
     pageview = st.sidebar.radio('Topic Select',(
         'Project Introduction',
+        'Timeline',
         'Feature Engineering',
         'Clustering',
         'Classification',
@@ -20,6 +21,8 @@ def run_app():
 
     if pageview == 'Project Introduction':
         views.landing()
+    elif pageview == 'Timeline':
+        views.timeline()
     elif pageview == 'Feature Engineering':
         views.feature_engineering()
     elif pageview == 'Clustering':
@@ -34,4 +37,4 @@ def run_app():
 
 
 if __name__ == "__main__":
-     run_app()
+     run()
