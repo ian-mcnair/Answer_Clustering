@@ -11,7 +11,7 @@ def run():
         'Project Introduction',
         'Clustering',
         'Classification',
-#         'Try it Yourself!',
+        'Try it Yourself!',
         ),
         index = 0
     )

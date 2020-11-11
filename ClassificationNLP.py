@@ -23,6 +23,7 @@ class Classification_NLP:
         self.pred = self.model.predict(self.X_test)
         self.score = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
+        self.sep = len(self.doc.columns.tolist()) - 2
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
         self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
@@ -46,8 +47,8 @@ class Classification_NLP:
         self.score = accuracy_score(self.doc.label, self.doc.prediction)
         return self.score, test_set_score
     
-    def grade_new_answer(self, sentence_data):
-        self.new_answers['prediction'] = self.model.predict(sentence_data)
+    def grade_new_answer(self):
+        self.new_answers['prediction'] = self.model.predict(self.new_answers.iloc[:, self.sep:])
     
     def create_features(self, answer):
         """

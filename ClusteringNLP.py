@@ -16,6 +16,7 @@ class Clustering_NLP:
         self.doc['cluster'] = self.model.labels_
         self.score = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
+        self.sep = len(self.doc.columns.tolist()) -2
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
         self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
@@ -49,8 +50,8 @@ class Clustering_NLP:
         self.score = accuracy_score(self.doc.label, self.doc.cluster)
         return self.score
     
-    def grade_new_answer(self, sentence_data):
-        self.new_answers['cluster'] = self.model.predict(sentence_data)
+    def grade_new_answer(self):
+        self.new_answers['cluster'] = self.model.predict(self.new_answers.iloc[:, self.sep:])
         if self.flag:
             self.new_answers['cluster'] = (self.new_answers['cluster'] - 1)**2
     
