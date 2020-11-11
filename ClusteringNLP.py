@@ -3,6 +3,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score
 import sentence_to_feature as sf
 from sklearn.preprocessing import MinMaxScaler
+import streamlit as st
 
 
 class Clustering_NLP:
@@ -12,7 +13,8 @@ class Clustering_NLP:
         self.doc = doc
         self.teacher_answer = self.doc.teacher_answer.values[0]
         self.model = KMeans(2).fit(data)
-        self.doc['cluster'] = self.model.labels_
+        st.write(self.model.labels_)
+#         self.doc['cluster'] = self.model.labels_
         self.score = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
