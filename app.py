@@ -1,6 +1,6 @@
 import pandas as pd 
 import numpy as np 
-import streamlit as st # pylint: disable=import-error
+import streamlit as st 
 import text
 # import charts
 import views
@@ -24,8 +24,8 @@ def run():
         views.classification()
     elif pageview == 'Conclusion':
         views.conclusion()
-    elif pageview == "Try it Yourself!":
-        views.tryit()
+#     elif pageview == "Try it Yourself!":
+#         views.tryit()
     
 
 
