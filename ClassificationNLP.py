@@ -26,7 +26,7 @@ class Classification_NLP:
         self.sep = len(self.doc.columns.tolist()) - 2
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
-        self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
+#         self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
         
     
     def data_split(self, test_size):
