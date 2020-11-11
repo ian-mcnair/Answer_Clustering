@@ -48,7 +48,8 @@ def plot_pca_chart(data, labels, cluster_centers):
     )
    
     ax.set_title("PCA Cluster Plot")
-    return fig
+    
+    return fig, ax
 
 def plot_tsne_chart(data, labels, cluster_centers):
     tsne = TSNE(n_components = 2,perplexity = 5)
@@ -71,5 +72,13 @@ def plot_tsne_chart(data, labels, cluster_centers):
         hue= labels,
     )
     
-    ax.set_title("T-SNE Cluster Plot")
-    return fig
+    ax.set_title("T-SNE Visualization")
+    
+    return fig, ax
+    
+    
+    
+    
+    
+    
+    

@@ -75,12 +75,17 @@ def clustering():
         st.write(data)
         st.write(pd.Series(data.columns, name = 'Features'))
     if chart_flag:
-            st.pyplot(fig = charts.plot_pca_chart(data, doc['label'], nlp.model.cluster_centers_))
-            st.pyplot(fig = charts.plot_tsne_chart(data, doc['label'], nlp.model.cluster_centers_))
+        col1, col2 = st.beta_columns(2)
+        fig1, ax1 = charts.plot_pca_chart(data, doc['label'], nlp.model.cluster_centers_)
+        fig2, ax2 = charts.plot_tsne_chart(data, doc['label'], nlp.model.cluster_centers_)
+        with col1:
+            st.pyplot(fig = fig1)
+            
+        with col2:
+            st.pyplot(fig = fig2)
+
     if model_flag:
-        st.markdown('## Model Data')
-        
-        
+        st.markdown('## Model Data') 
         st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
         st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
         
