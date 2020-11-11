@@ -1,13 +1,8 @@
 import pandas as pd
-from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN, OPTICS, Birch
 from sklearn.metrics import accuracy_score
 import sentence_to_feature as sf
-from sklearn.preprocessing import MinMaxScaler
-
 from sklearn.linear_model import LogisticRegression
-# from sklearn.svm import SVC
-# from sklearn.naive_bayes import GaussianNB
-# from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
 
@@ -25,6 +20,7 @@ class Classification_NLP:
         self.model = LogisticRegression()
         self.model.fit(self.X_train, self.y_train)
         self.doc['prediction'] = self.model.predict(self.data)
+        self.pred = self.model.predict(self.X_test)
         self.score = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
@@ -33,7 +29,8 @@ class Classification_NLP:
         
     
     def data_split(self, test_size):
-         return train_test_split(self.data, self.doc.label, test_size = test_size, stratify = self.doc.label)
+        
+        return train_test_split(self.data, self.doc.label, test_size = test_size, stratify = self.doc.label, random_state = 42)
         
     def create_scaler(self, df, col, func):
         word_counts = df[col].apply(func)
@@ -49,7 +46,7 @@ class Classification_NLP:
         self.score = accuracy_score(self.doc.label, self.doc.prediction)
         return self.score, test_set_score
     
-    def score_new_sentence(self, sentence_data):
+    def grade_new_answer(self, sentence_data):
         self.new_answers['prediction'] = self.model.predict(sentence_data)
     
     def create_features(self, answer):

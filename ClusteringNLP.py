@@ -13,8 +13,7 @@ class Clustering_NLP:
         self.doc = doc
         self.teacher_answer = self.doc.teacher_answer.values[0]
         self.model = KMeans(2).fit(data)
-        st.write(self.model.labels_)
-#         self.doc['cluster'] = self.model.labels_
+        self.doc['cluster'] = self.model.labels_
         self.score = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
@@ -50,12 +49,12 @@ class Clustering_NLP:
         self.score = accuracy_score(self.doc.label, self.doc.cluster)
         return self.score
     
-    def score_new_sentences(self, sentence_data):
+    def grade_new_answer(self, sentence_data):
         self.new_answers['cluster'] = self.model.predict(sentence_data)
         if self.flag:
             self.new_answers['cluster'] = (self.new_answers['cluster'] - 1)**2
     
-    def group_new_answer(self, answer):
+    def create_features(self, answer):
         """
         NOTES
         The below actually has MORE features than what my documentation is showing

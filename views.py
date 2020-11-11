@@ -71,6 +71,7 @@ def clustering():
         st.markdown('## Question Info')
         st.write(doc)
     if data_flag:
+        st.write(data.columns)
         st.markdown('## Prediction Data')
         st.write(data)
         st.write(pd.Series(data.columns, name = 'Features'))
@@ -94,13 +95,8 @@ def clustering():
         try_it = st.checkbox('Try it Yourself!')
         explore_flag = st.checkbox('Explore Data')
         if try_it:
-            answer = ''
-            st.markdown(f'## **Question:** {questions[num]}')
-            answer = st.text_input("Answer the above question")
-            if answer != '':
-                nlp.group_new_answer(answer)
-                nlp.score_new_sentences(nlp.new_answers.iloc[:, 11:]) ############# Need to figure this out ???
-                st.write(nlp.new_answers)
+            tryit(nlp)
+                
             
         if explore_flag:
             st.markdown(f"""**Dataset Length: {len(results)}** """)
@@ -122,7 +118,6 @@ def classification():
     st.markdown("# **Supervised Learning | Classification**")
     
     st.markdown("### Choose a Dataset")
-    st.markdown("### Choose a Dataset")
     files = tools.get_files()
     option = st.selectbox(
         'Select a Teacher Answer',
@@ -140,18 +135,18 @@ def classification():
     st.markdown('**Select the below based on what you want to see:**')
     doc_flag = st.checkbox('Display Question Info')
     data_flag = st.checkbox('Display Prediction Data')
-    chart_flag = st.checkbox('Display Reduced-Dimensionality Chart')
     model_flag = st.checkbox('Display Model Info and Performance')
     
     test_size = st.number_input(
             'Test Size',
             min_value = 0.01,
-            max_value = 1.00,
+            max_value = 0.91,
             value = .75,
-            step = 0.1
+            step = 0.05
             )
-    nlp = Classification_NLP(data, doc)
-    
+    nlp = Classification_NLP(data, doc, test_size)
+    st.markdown(f'Training Set Size: {len(nlp.X_train)}')
+    st.markdown(f'Test Set Size: {len(nlp.X_test)}')
     if doc_flag:
         st.markdown('## Question Info')
         st.write(doc)
@@ -159,20 +154,20 @@ def classification():
         st.markdown('## Prediction Data')
         st.write(data)
         st.write(pd.Series(data.columns, name = 'Features'))
-    if chart_flag:
-        st.write("need to think more about representing this as classification")
-#         st.pyplot(fig = charts.plot_pca_chart(data, doc['label'], nlp.model.cluster_centers_))
-#         st.pyplot(fig = charts.plot_tsne_chart(data, doc['label'], nlp.model.cluster_centers_))
     if model_flag:
         st.markdown('## Model Data')
         
         _, accuracy =  nlp.accuracy()
         st.markdown(f'### **Test Set Accuracy of Model: {round(accuracy, 3)}**  ')
-        st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.prediction))
+        st.pyplot(fig = charts.plot_confusion_matrix(nlp.y_test, nlp.pred))
         
         
         results = doc[['student_answer', 'label', 'prediction']]
+        try_it = st.checkbox('Try it Yourself!')
         explore_flag = st.checkbox('Explore Data')
+        
+        if try_it:
+            tryit(nlp)
         if explore_flag:
             st.markdown(f"""**Dataset Length: {len(results)}** """)
             start, end = st.slider(
@@ -188,5 +183,19 @@ def classification():
                 else:
                     st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'prediction'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
 
-def tryit():
-    pass
+def tryit(nlp):
+    st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
+    answer = st.text_input("Submit Your Own Answer")
+    if answer != '':
+        nlp.create_features(answer)
+        nlp.grade_new_answer(nlp.new_answers.iloc[:, 7:])
+        prediction = nlp.new_answers.iloc[0,6]
+        pred = ''
+        if prediction == 1:
+            pred = 'correct'
+            st.balloons()
+        else:
+            pred = "incorrect"
+        
+        if pred != '':
+            st.markdown(f' Your answer is predicted {pred}')

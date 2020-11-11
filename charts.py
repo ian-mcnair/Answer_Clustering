@@ -10,7 +10,8 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 from sklearn.cluster import KMeans
-
+sns.set_style("darkgrid")
+sns.set_context("talk")
 
 
 def plot_confusion_matrix(true, pred):
@@ -30,6 +31,7 @@ def plot_confusion_matrix(true, pred):
 
 
 def plot_pca_chart(data, labels, cluster_centers):
+
     pca = PCA(n_components = 2)
     comps = pca.fit_transform(data)
     cluster_centers = pca.transform(cluster_centers)
@@ -72,7 +74,7 @@ def plot_tsne_chart(data, labels, cluster_centers):
         hue= labels,
     )
     
-    ax.set_title("T-SNE Visualization")
+    ax.set_title("t-SNE Visualization")
     
     return fig, ax
     
