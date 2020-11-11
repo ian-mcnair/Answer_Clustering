@@ -61,14 +61,10 @@ class Classification_NLP:
         Basically need to create all the features for the new answer
         """
         # Get the teacher's stuff
-        a_answer = self.teacher_answer
-        a_answer_ordered = sf.order_sentence(a_answer)
         a_stopwords = sf.remove_stopwords(self.teacher_answer)
         a_stemmed = sf.stem_sentence(a_stopwords)
-        a_stopwords_ordered = sf.order_sentence(a_stemmed)
         a_stemmed_ordered = sf.order_sentence(a_stemmed)
-        a_lem = sf.lemmatize_sentence(self.teacher_answer)
-        a_lem_ordered = sf.order_sentence(a_lem)
+
         teacher_answers = [
 
             a_stemmed,
@@ -111,10 +107,8 @@ class Classification_NLP:
         I should use ALLL The combinations, ordered, stem/lem
         """
         types_of_sentences = [
-
             'q_stemmed',
             'q_stem_ordered',
-
         ]
         
         for sent_type, teach_ans in zip(types_of_sentences, teacher_answers):

@@ -41,8 +41,8 @@ from spacy.lang.en.stop_words import STOP_WORDS
 nlp = spacy.load("en_core_web_sm")
 
 #NLTK Imports
-from nltk.stem.wordnet import WordNetLemmatizer
-lm = WordNetLemmatizer()
+# from nltk.stem.wordnet import WordNetLemmatizer
+# lm = WordNetLemmatizer()
 from nltk.stem import PorterStemmer
 porter = PorterStemmer()
 
@@ -77,11 +77,11 @@ def remove_stopwords(doc):
             filtered_sentence.append(word) 
     return " ".join(filtered_sentence)
 
-def lemmatize_sentence(sentence):
-    sentence = clean_sentence(sentence)
-    sentence = remove_stopwords(sentence)
-    lemma_sent = [lm.lemmatize(word) for word in sentence.split(" ")]
-    return " ".join(lemma_sent)
+# def lemmatize_sentence(sentence):
+#     sentence = clean_sentence(sentence)
+#     sentence = remove_stopwords(sentence)
+#     lemma_sent = [lm.lemmatize(word) for word in sentence.split(" ")]
+#     return " ".join(lemma_sent)
 
 def stem_sentence(sentence, stem=True):
     # Strip punctuaton
@@ -102,8 +102,8 @@ def word_count(sentence):
     sentence = sentence.replace(".", "")
     return len(sentence.split(" "))
 
-def sentence_count(sentence):
-    return len(sentence.split("."))
+# def sentence_count(sentence):
+#     return len(sentence.split("."))
 
 ################### similarity measures ####################
 def generic_similarity(sentence, answer):
@@ -123,22 +123,22 @@ def jaccard_similarity(student_answer, teacher_answer):
     c = a.intersection(b)
     return (len(c) / (len(a) + len(b) - len(c)))
     
-def spacy_similarity(doc1, doc2):
-    """
-    Going to remove all words but nouns and compare that way
+# def spacy_similarity(doc1, doc2):
+#     """
+#     Going to remove all words but nouns and compare that way
     
-    """
-    doc1 =  doc1.translate(doc1.maketrans("","", string.punctuation))
-    doc2 =  doc2.translate(doc1.maketrans("","", string.punctuation))
-    student_answer = nlp(doc1)
-    student_answer = nlp(' '.join([str(x) for x in student_answer if x.pos_ in ['NOUN', 'PROPN']]))
-    teacher_answer = nlp(doc2)
-    teacher_answer = nlp(' '.join([str(x) for x in teacher_answer if x.pos_ in ['NOUN', 'PROPN']]))
-    if len(student_answer) == 0 or len(teacher_answer) == 0:
-        return 0.0
-    else:
-        sim = teacher_answer.similarity(student_answer)
-        return sim
+#     """
+#     doc1 =  doc1.translate(doc1.maketrans("","", string.punctuation))
+#     doc2 =  doc2.translate(doc1.maketrans("","", string.punctuation))
+#     student_answer = nlp(doc1)
+#     student_answer = nlp(' '.join([str(x) for x in student_answer if x.pos_ in ['NOUN', 'PROPN']]))
+#     teacher_answer = nlp(doc2)
+#     teacher_answer = nlp(' '.join([str(x) for x in teacher_answer if x.pos_ in ['NOUN', 'PROPN']]))
+#     if len(student_answer) == 0 or len(teacher_answer) == 0:
+#         return 0.0
+#     else:
+#         sim = teacher_answer.similarity(student_answer)
+#         return sim
     
 def cosine_similarity(sentence, answer):
     tokens = set(sentence.split(" ") + answer.split(" "))
@@ -249,14 +249,14 @@ def scale_column(sc, count):
     return sc.transform(np.array([[count]]))[0][0]
 
 ################### Feature Reduction ####################
-def drop_low_variance_features(df, idx_start,threshold = 0.0):
-    left = df.iloc[:, :idx_start]
-    right = df.iloc[:, idx_start:]
-    selector = VarianceThreshold(threshold)
-    best_features = selector.fit_transform(right)
-    right = right.loc[:,selector.get_support()]
-    df = pd.concat([left,right], axis = 1)
-    return df
+# def drop_low_variance_features(df, idx_start,threshold = 0.0):
+#     left = df.iloc[:, :idx_start]
+#     right = df.iloc[:, idx_start:]
+#     selector = VarianceThreshold(threshold)
+#     best_features = selector.fit_transform(right)
+#     right = right.loc[:,selector.get_support()]
+#     df = pd.concat([left,right], axis = 1)
+#     return df
 
 def save_feature_set(df, idx_start, path, filename):
     left = df.iloc[:, :idx_start]

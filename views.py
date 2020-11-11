@@ -196,6 +196,11 @@ def tryit(nlp):
         st.write(nlp.data.columns)
         st.write(nlp.new_answers.iloc[:,nlp.sep:].columns)
         # It is missing some vars for some reason?
+        # THERE IS A WEIRD DATA ISSUE 
+        """
+        Weird issue where a random dataset gets injected into it
+        maybe an object or caching issue?
+        """
         nlp.grade_new_answer()
         prediction = nlp.new_answers.iloc[0,6]
         pred = ''
