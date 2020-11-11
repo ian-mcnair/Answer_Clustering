@@ -188,6 +188,9 @@ def tryit(nlp):
     answer = st.text_input("Submit Your Own Answer")
     if answer != '':
         nlp.create_features(answer)
+        st.write(nlp.sep)
+        st.write(nlp.new_answers)
+        st.write(nlp.new_answers.iloc[:,nlp.sep:])
         nlp.grade_new_answer()
         prediction = nlp.new_answers.iloc[0,6]
         pred = ''
