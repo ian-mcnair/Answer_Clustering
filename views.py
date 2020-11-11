@@ -191,6 +191,11 @@ def tryit(nlp):
         st.write(nlp.sep)
         st.write(nlp.new_answers)
         st.write(nlp.new_answers.iloc[:,nlp.sep:])
+        st.write(nlp.new_answers.columns)
+        st.write(nlp.doc.columns)
+        st.write(nlp.data.columns)
+        st.write(nlp.new_answers.iloc[:,nlp.sep:].columns)
+        # It is missing some vars for some reason?
         nlp.grade_new_answer()
         prediction = nlp.new_answers.iloc[0,6]
         pred = ''
