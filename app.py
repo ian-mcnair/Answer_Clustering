@@ -11,7 +11,7 @@ def run():
         'Project Introduction',
         'Clustering',
         'Classification',
-        'Try it Yourself!',
+#         'Try it Yourself!',
         ),
         index = 0
     )
@@ -24,7 +24,8 @@ def run():
         views.classification()
     elif pageview == 'Conclusion':
         views.conclusion()
-#     elif pageview == "Try it Yourself!":
+    elif pageview == "Try it Yourself!":
+        st.write("Nothing here yet")
 #         views.tryit()
     
 
