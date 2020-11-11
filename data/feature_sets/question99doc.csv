@@ -1,0 +1,38 @@
+student_answer,teacher_answer,label,question_id,q_answer,q_stopwords,q_stemmed,q_stem_ordered
+The light bulb will not work.,The bulb will light.,0,99,The light bulb will not work.,light bulb work,light bulb work,bulb light work
+Only the light will light.,The bulb will light.,1,99,The light bulb will not work.,light light,light light,light light
+Nothing will happen.,The bulb will light.,0,99,The light bulb will not work.,happen,happen,happen
+The light bulb will light up.,The bulb will light.,1,99,The light bulb will not work.,light bulb light,light bulb light,bulb light light
+It is going to stop.,The bulb will light.,0,99,The light bulb will not work.,going stop,go stop,go stop
+The light will come on.,The bulb will light.,1,99,The light bulb will not work.,light come,light come,come light
+The bulb will light.,The bulb will light.,1,99,The light bulb will not work.,bulb light,bulb light,bulb light
+Nothing.,The bulb will light.,0,99,The light bulb will not work.,,,
+The bulb will come on.,The bulb will light.,1,99,The light bulb will not work.,bulb come,bulb come,bulb come
+The motor will run.,The bulb will light.,0,99,The light bulb will not work.,motor run,motor run,motor run
+The light bulb will run.,The bulb will light.,1,99,The light bulb will not work.,light bulb run,light bulb run,bulb light run
+The light bulb will lit.,The bulb will light.,1,99,The light bulb will not work.,light bulb lit,light bulb lit,bulb light lit
+It will not work.,The bulb will light.,0,99,The light bulb will not work.,work,work,work
+It will turn on.,The bulb will light.,0,99,The light bulb will not work.,turn,turn,turn
+The motor will run.,The bulb will light.,0,99,The light bulb will not work.,motor run,motor run,motor run
+The light bulb will cut on.,The bulb will light.,1,99,The light bulb will not work.,light bulb cut,light bulb cut,bulb cut light
+I will start the motor and light.,The bulb will light.,1,99,The light bulb will not work.,start motor light,start motor light,light motor start
+When she moves the switch to the left the light bulb will turn on.,The bulb will light.,1,99,The light bulb will not work.,moves switch left light bulb turn,move switch left light bulb turn,bulb left light move switch turn
+The energy will keep flowing.,The bulb will light.,0,99,The light bulb will not work.,energy flowing,energi flow,energi flow
+If she moves the switch to the left everything will turn on.,The bulb will light.,1,99,The light bulb will not work.,moves switch left turn,move switch left turn,left move switch turn
+The light will run.,The bulb will light.,1,99,The light bulb will not work.,light run,light run,light run
+The light bulb will turn on.,The bulb will light.,1,99,The light bulb will not work.,light bulb turn,light bulb turn,bulb light turn
+The light run.,The bulb will light.,1,99,The light bulb will not work.,light run,light run,light run
+The bulb will light.,The bulb will light.,1,99,The light bulb will not work.,bulb light,bulb light,bulb light
+The motor and light will run.,The bulb will light.,1,99,The light bulb will not work.,motor light run,motor light run,light motor run
+The light and motor goes on.,The bulb will light.,1,99,The light bulb will not work.,light motor goes,light motor goe,goe light motor
+Only the light bulb will light.,The bulb will light.,1,99,The light bulb will not work.,light bulb light,light bulb light,bulb light light
+The light will turn on.,The bulb will light.,1,99,The light bulb will not work.,light turn,light turn,light turn
+If she moves the switch left the motor will not start and the light will not light up.,The bulb will light.,0,99,The light bulb will not work.,moves switch left motor start light light,move switch left motor start light light,left light light motor move start switch
+The light bulb would light up.,The bulb will light.,1,99,The light bulb will not work.,light bulb light,light bulb light,bulb light light
+The light bulb will turn on.,The bulb will light.,1,99,The light bulb will not work.,light bulb turn,light bulb turn,bulb light turn
+The light bulb will work and the motor will work.,The bulb will light.,1,99,The light bulb will not work.,light bulb work motor work,light bulb work motor work,bulb light motor work work
+It would be a series.,The bulb will light.,0,99,The light bulb will not work.,series,seri,seri
+Both of the receivers will light.,The bulb will light.,1,99,The light bulb will not work.,receivers light,receiv light,light receiv
+It will go off.,The bulb will light.,0,99,The light bulb will not work.,,,
+"When the switch moves to the left, it will work.",The bulb will light.,0,99,The light bulb will not work.,switch moves left work,switch move left work,left move switch work
+The bulb will light.,The bulb will light.,1,99,The light bulb will not work.,bulb light,bulb light,bulb light

@@ -38,7 +38,7 @@ import math
 #Spacy Imports
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_sm")
 
 #NLTK Imports
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -103,7 +103,7 @@ def word_count(sentence):
     return len(sentence.split(" "))
 
 def sentence_count(sentence):
-    return len(sentence.split("."))-1
+    return len(sentence.split("."))
 
 ################### similarity measures ####################
 def generic_similarity(sentence, answer):

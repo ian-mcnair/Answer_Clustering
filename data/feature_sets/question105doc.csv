@@ -1,0 +1,38 @@
+student_answer,teacher_answer,label,question_id,q_answer,q_stopwords,q_stemmed,q_stem_ordered
+They are loop.,Both finger patterns are loops.,1,105,They are loop.,loop,loop,loop
+One is a loop and one is arch.,Both finger patterns are loops.,0,105,They are loop.,loop arch,loop arch,arch loop
+They are the same.,Both finger patterns are loops.,0,105,They are loop.,,,
+The both finer patterns are loop.,Both finger patterns are loops.,1,105,They are loop.,finer patterns loop,finer pattern loop,finer loop pattern
+They are same loop.,Both finger patterns are loops.,1,105,They are loop.,loop,loop,loop
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are loop.,Both finger patterns are loops.,1,105,They are loop.,loop,loop,loop
+Because you look at the finger patterns.,Both finger patterns are loops.,0,105,They are loop.,look finger patterns,look finger pattern,finger look pattern
+They are loop.,Both finger patterns are loops.,1,105,They are loop.,loop,loop,loop
+They are both a loop.,Both finger patterns are loops.,1,105,They are loop.,loop,loop,loop
+Loop.,Both finger patterns are loops.,1,105,They are loop.,loop,loop,loop
+Both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are both the same pattern.,Both finger patterns are loops.,0,105,They are loop.,pattern,pattern,pattern
+Their shape is the same.,Both finger patterns are loops.,0,105,They are loop.,shape,shape,shape
+They have lines.,Both finger patterns are loops.,0,105,They are loop.,lines,line,line
+They are both arches.,Both finger patterns are loops.,0,105,They are loop.,arches,arch,arch
+It is the same because it has loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+Patterns below then.,Both finger patterns are loops.,0,105,They are loop.,patterns,pattern,pattern
+They both have loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They all have lines.,Both finger patterns are loops.,0,105,They are loop.,lines,line,line
+They are both are loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are both thumbs.,Both finger patterns are loops.,0,105,They are loop.,thumbs,thumb,thumb
+Both of the finger points have a loop.,Both finger patterns are loops.,1,105,They are loop.,finger points loop,finger point loop,finger loop point
+They are both a loop.,Both finger patterns are loops.,1,105,They are loop.,loop,loop,loop
+They both have a loop in them.,Both finger patterns are loops.,1,105,They are loop.,loop,loop,loop
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+They are the same kind of finger patterns.,Both finger patterns are loops.,0,105,They are loop.,kind finger patterns,kind finger pattern,finger kind pattern
+They are both loops.,Both finger patterns are loops.,1,105,They are loop.,loops,loop,loop
+Both finger patterns are loops.,Both finger patterns are loops.,1,105,They are loop.,finger patterns loops,finger pattern loop,finger loop pattern

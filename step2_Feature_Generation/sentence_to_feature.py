@@ -37,7 +37,7 @@ import math
 #Spacy Imports
 import spacy
 from spacy.lang.en.stop_words import STOP_WORDS
-nlp = spacy.load("en_core_web_lg")
+nlp = spacy.load("en_core_web_sm")
 
 #NLTK Imports
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -122,23 +122,6 @@ def jaccard_similarity(student_answer, teacher_answer):
     c = a.intersection(b)
     return (len(c) / (len(a) + len(b) - len(c)))
     
-def spacy_similarity(doc1, doc2):
-    """
-    Going to remove all words but nouns and compare that way
-    
-    """
-    doc1 =  doc1.translate(doc1.maketrans("","", string.punctuation))
-    doc2 =  doc2.translate(doc1.maketrans("","", string.punctuation))
-    student_answer = nlp(doc1)
-    student_answer = nlp(' '.join([str(x) for x in student_answer if x.pos_ in ['NOUN', 'PROPN']]))
-    teacher_answer = nlp(doc2)
-    teacher_answer = nlp(' '.join([str(x) for x in teacher_answer if x.pos_ in ['NOUN', 'PROPN']]))
-    if len(student_answer) == 0 or len(teacher_answer) == 0:
-        return 0.0
-    else:
-        sim = teacher_answer.similarity(student_answer)
-        return sim
-    
 def cosine_similarity(sentence, answer):
     tokens = set(sentence.split(" ") + answer.split(" "))
     if '' in tokens:
@@ -215,7 +198,6 @@ def create_list_of_bigrams(sentence):
         # For index out of bounds error prrevention
         if i < len(sentence_list)-1:
             bigram_list.append(f"{sentence_list[i]} {sentence_list[i+1]}")
-    print(bigram_list)
     return bigram_list
 
 def trigram_entity_extraction(df, sentence_col_name, new_col_name, answer):
@@ -264,9 +246,7 @@ def save_feature_set(df, idx_start, path, filename):
         path + filename + 'doc.csv',
         index = False
     )
-    print("Saved document data")
     right.to_csv(
         path + filename + 'data.csv',
         index = False
     )
-    print("Saved numerical data")

@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN, OPTICS, Birch
+from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score
 import sentence_to_feature as sf
 from sklearn.preprocessing import MinMaxScaler
@@ -49,10 +49,9 @@ class Clustering_NLP:
         return self.score
     
     def score_new_sentences(self, sentence_data):
-        clusters = self.model.predict(sentence_data)
+        self.new_answers['cluster'] = self.model.predict(sentence_data)
         if self.flag:
-            clusters = (clusters - 1)**2
-        print(clusters)
+            self.new_answers['cluster'] = (self.new_answers['cluster'] - 1)**2
     
     def group_new_answer(self, answer):
         """
@@ -67,36 +66,24 @@ class Clustering_NLP:
         # Get the teacher's stuff
         a_stopwords = sf.remove_stopwords(self.teacher_answer)
         a_stemmed = sf.stem_sentence(a_stopwords)
-        a_stopwords_ordered = sf.order_sentence(a_stemmed)
         a_stemmed_ordered = sf.order_sentence(a_stemmed)
-        a_lem = sf.lemmatize_sentence(self.teacher_answer)
-        a_lem_ordered = sf.order_sentence(a_lem)
         teacher_answers = [
-            a_stopwords,
-            a_stopwords_ordered,
             a_stemmed,
             a_stemmed_ordered,
-            a_lem,
-            a_lem_ordered,
         ]
         
         # Change sentence into multiple versions
         log = dict()
         log['student_answer'] = answer
         log['teacher_answer'] = self.teacher_answer
+        log['q_answer'] = answer
         log['q_stopwords'] = sf.remove_stopwords(answer)
-        log['q_stopwords_ordered'] = sf.order_sentence(answer)
         log['q_stemmed'] = sf.stem_sentence(answer)
-        log['q_stem_ordered'] = sf.order_sentence(answer)
-        log['q_lemm'] = sf.lemmatize_sentence(answer)
-        log['q_lemm_ordered'] = sf.order_sentence(answer)
+        log['q_stem_ordered'] = sf.order_sentence(log['q_stemmed'])
         
         # Might need to save scaling until jsut before modeling
         log['wordcount'] = sf.word_count(answer)
         log['wordcount'] = sf.scale_column(self.word_scaler, log['wordcount'])
-        log['sentence_count'] = sf.sentence_count(answer)
-        log['sentence_count'] = sf.scale_column(self.sent_scaler, log['sentence_count'])
-        #same fix as before
 
 
 #         Stem sim
@@ -108,36 +95,22 @@ class Clustering_NLP:
         log['stem_ordered_j_similarity'] =  sf.jaccard_similarity(log['q_stem_ordered'], a_stemmed_ordered)
         log['stem_ordered_c_similarity'] =  sf.cosine_similarity(log['q_stem_ordered'], a_stemmed_ordered)
 
-#         Lem Sim
-#         log['lem_g_similarity'] = sf.generic_similarity(log['q_lemm'], a_lem)
-#         log['lem_j_similarity'] = sf.jaccard_similarity(log['q_lemm'], a_lem)
-#         log['lem_c_similarity'] = sf.cosine_similarity(log['q_lemm'], a_lem)
-# #        # Lem sim ordered
-#         log['lem_ordered_g_similarity'] = sf.generic_similarity(log['q_lemm_ordered'], a_lem_ordered)
-#         log['lem_ordered_j_similarity'] = sf.jaccard_similarity(log['q_lemm_ordered'], a_lem_ordered)
-#         log['lem_ordered_c_similarity'] = sf.cosine_similarity(log['q_lemm_ordered'], a_lem_ordered)
+
         
         # Appending New Answer
         self.new_answers = self.new_answers.append(log, ignore_index = True)
         
         # Entity Extraction
-        """
-        I should use ALLL The combinations, ordered, stem/lem
-        """
         types_of_sentences = [
-#             'q_stopwords',
-#             'q_stopwords_ordered',
             'q_stemmed',
             'q_stem_ordered',
-#             'q_lemm',
-#             'q_lemm_ordered',
         ]
         
         for sent_type, teach_ans in zip(types_of_sentences, teacher_answers):
             
             self.new_answers = sf.unigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
-#             self.new_answers = sf.bigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
-#             self.new_answers = sf.trigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
+            self.new_answers = sf.bigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
+            self.new_answers = sf.trigram_entity_extraction(self.new_answers, sent_type, sent_type, teach_ans)
         
 
         

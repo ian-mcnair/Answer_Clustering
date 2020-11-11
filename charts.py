@@ -5,6 +5,12 @@ import seaborn as sns
 import tools
 import streamlit as st 
 from sklearn.metrics import accuracy_score, confusion_matrix
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.manifold import TSNE
+from sklearn.cluster import KMeans
+
 
 
 def plot_confusion_matrix(true, pred):
@@ -22,3 +28,48 @@ def plot_confusion_matrix(true, pred):
     cm.set_xticklabels(labels = ['Wrong', 'Right'], ha = 'center')
     return fig
 
+
+def plot_pca_chart(data, labels, cluster_centers):
+    pca = PCA(n_components = 2)
+    comps = pca.fit_transform(data)
+    cluster_centers = pca.transform(cluster_centers)
+    fig, ax = plt.subplots()
+    ax = sns.scatterplot(
+        x = cluster_centers[:,0],
+        y = cluster_centers[:,1],
+        color  = 'black',
+        s= 250,
+        marker = '8'
+    )
+    ax = sns.scatterplot(
+        x = comps[:,0],
+        y = comps[:,1],
+        hue= labels,
+    )
+   
+    ax.set_title("PCA Cluster Plot")
+    return fig
+
+def plot_tsne_chart(data, labels, cluster_centers):
+    tsne = TSNE(n_components = 2,perplexity = 5)
+    data = tsne.fit_transform(data.append(pd.DataFrame(cluster_centers, columns = data.columns)))
+    cluster_centers = data[-2:,:].copy()
+    data = data[:-2,:].copy()
+                              
+    fig, ax = plt.subplots()
+    ax = sns.scatterplot(
+        x = cluster_centers[:,0],
+        y = cluster_centers[:,1],
+        color  = 'black',
+        s= 250,
+        marker = '8'
+    )
+    
+    ax = sns.scatterplot(
+        x = data[:,0],
+        y = data[:,1],
+        hue= labels,
+    )
+    
+    ax.set_title("T-SNE Cluster Plot")
+    return fig

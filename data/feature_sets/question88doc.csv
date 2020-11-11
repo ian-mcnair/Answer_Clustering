@@ -1,0 +1,37 @@
+student_answer,teacher_answer,label,question_id,q_answer,q_stopwords,q_stemmed,q_stem_ordered
+The baby plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,baby plant,babi plant,babi plant
+Grows into plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,grows plant,grow plant,grow plant
+Germinates.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,germinates,germin,germin
+The embryo is the root or stem.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,embryo root stem,embryo root stem,embryo root stem
+Baby plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,baby plant,babi plant,babi plant
+Baby plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,baby plant,babi plant,babi plant
+It is the baby plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,baby plant,babi plant,babi plant
+Baby plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,baby plant,babi plant,babi plant
+The seed.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,seed,seed,seed
+The roots are.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,roots,root,root
+Leaves and roots.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,leaves roots,leav root,leav root
+A plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,plant,plant,plant
+The small leaves and roots.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,small leaves roots,small leav root,leav root small
+It betakes the pea.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,betakes pea,betak pea,betak pea
+The embryo is the part of the plant that grows.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,embryo plant grows,embryo plant grow,embryo grow plant
+It helps the baby to eat food.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,helps baby eat food,help babi eat food,babi eat food help
+The part that grows into a plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,grows plant,grow plant,grow plant
+"The part that grows a leaf, stem.",The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,grows leaf stem,grow leaf stem,grow leaf stem
+Grows into a plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,grows plant,grow plant,grow plant
+Embryo grows the leaves.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,embryo grows leaves,embryo grow leav,embryo grow leav
+Stem and leaf and baby.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,stem leaf baby,stem leaf babi,babi leaf stem
+"The leave, stem, and spout.",The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,leave stem spout,leav stem spout,leav spout stem
+Stem.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,stem,stem,stem
+"Helps root, leaves, and stem.",The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,helps root leaves stem,help root leav stem,help leav root stem
+"Leaves, stem.",The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,leaves stem,leav stem,leav stem
+It is the baby seed.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,baby seed,babi seed,babi seed
+Baby plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,baby plant,babi plant,babi plant
+"The whale structure includes the root, stem, and leaves.",The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,whale structure includes root stem leaves,whale structur includ root stem leav,includ leav root stem structur whale
+The sack of food for the seed.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,sack food seed,sack food seed,food sack seed
+The root and stem of a plant.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,root stem plant,root stem plant,plant root stem
+Part of a seed that grows into a plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,seed grows plant,seed grow plant,grow plant seed
+"Where leaves, roots or a stem grows.",The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,leaves roots stem grows,leav root stem grow,grow leav root stem
+"The embryo is the part that grows into the roots, stems, and leaves.",The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,embryo grows roots stems leaves,embryo grow root stem leav,embryo grow leav root stem
+The embryo is the whole structure.,The embryo contains the tiny leaves and root of the plant.,0,88,The baby plant.,embryo structure,embryo structur,embryo structur
+The young plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,young plant,young plant,plant young
+The embryo contains the tiny leaves and root of the plant.,The embryo contains the tiny leaves and root of the plant.,1,88,The baby plant.,embryo contains tiny leaves root plant,embryo contain tini leav root plant,contain embryo leav plant root tini
