@@ -1,0 +1,36 @@
+student_answer,teacher_answer,label,question_id,q_answer,q_stopwords,q_stemmed,q_stem_ordered
+It has to have at least one seed.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seed,seed,seed
+I know if it is a fruit because it would have seeds in it.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,know fruit seeds,know fruit seed,fruit know seed
+To be a fruit it must have at least one seed in it.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,fruit seed,fruit seed,fruit seed
+It has seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seeds,seed,seed
+In java are seed.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,java seed,java seed,java seed
+"If has seed, in it the do have seeds, in it.","If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seed seeds,seed seed,seed seed
+If it has seeds it is a plant.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seeds plant,seed plant,plant seed
+I will look at the seed.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,look seed,look seed,look seed
+It has a seed.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seed,seed,seed
+"It has to have an embryo, seed count, and cotyledon.","If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,embryo seed count cotyledon,embryo seed count cotyledon,cotyledon count embryo seed
+You have to make sure it has seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,sure seeds,sure seed,seed sure
+If it has seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seeds,seed,seed
+The rule for deciding if the part of a plant you are observing is a fruit is a fruit is not a fruit unless it has seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,rule deciding plant observing fruit fruit fruit seeds,rule decid plant observ fruit fruit fruit seed,decid fruit fruit fruit observ plant rule seed
+It case a stem I do not know.,"If a part of the plant contains seeds, that part is the fruit.",0,30,It has to have at least one seed.,case stem know,case stem know,case know stem
+My rule is has to be sweet.,"If a part of the plant contains seeds, that part is the fruit.",0,30,It has to have at least one seed.,rule sweet,rule sweet,rule sweet
+If it has seeds that is the answer to the question I think.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seeds answer question think,seed answer question think,answer question seed think
+I decide by looking in it and seeing a seed.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,decide looking seeing seed,decid look see seed,decid look see seed
+By the texture the smell of the fruit and the weight.,"If a part of the plant contains seeds, that part is the fruit.",0,30,It has to have at least one seed.,texture smell fruit weight,textur smell fruit weight,fruit smell textur weight
+Does it have juice.,"If a part of the plant contains seeds, that part is the fruit.",0,30,It has to have at least one seed.,juice,juic,juic
+Because it has seeds and if it has seeds in it is a fruit.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seeds seeds fruit,seed seed fruit,fruit seed seed
+My rule is to make sure it has seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,rule sure seeds,rule sure seed,rule seed sure
+My rule is that the fruit has to have a seed or seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,rule fruit seed seeds,rule fruit seed seed,fruit rule seed seed
+The part of a plant you are observing is a fruit if it has seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,plant observing fruit seeds,plant observ fruit seed,fruit observ plant seed
+If it has sees it is a fruit.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,sees fruit,see fruit,fruit see
+If it has a seed or not.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seed,seed,seed
+Does it have seeds is it covering seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seeds covering seeds,seed cover seed,cover seed seed
+The flowers.,"If a part of the plant contains seeds, that part is the fruit.",0,30,It has to have at least one seed.,flowers,flower,flower
+I know the part of the plant I am observing is a fruit because it has one or more seeds.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,know plant observing fruit seeds,know plant observ fruit seed,fruit know observ plant seed
+If I look in it and it has seeds in it it is a fruit then if it do not have seeds then it is no a fruit.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,look seeds fruit seeds fruit,look seed fruit seed fruit,fruit fruit look seed seed
+It nest to have a seed.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,nest seed,nest seed,nest seed
+Because inside the plant is a seed.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,inside plant seed,insid plant seed,insid plant seed
+"It has to have a seed of it does not have no seed, it will not be a fruit.","If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seed seed fruit,seed seed fruit,fruit seed seed
+It is going to tell you if you have a baby plant first.,"If a part of the plant contains seeds, that part is the fruit.",0,30,It has to have at least one seed.,going tell baby plant,go tell babi plant,babi go plant tell
+That it has seeds or not.,"If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,seeds,seed,seed
+"If a part of the plant contains seeds, that part is the fruit.","If a part of the plant contains seeds, that part is the fruit.",1,30,It has to have at least one seed.,plant contains seeds fruit,plant contain seed fruit,contain fruit plant seed

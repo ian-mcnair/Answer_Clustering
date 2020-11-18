@@ -1,0 +1,40 @@
+student_answer,teacher_answer,label,question_id,q_answer,q_stopwords,q_stemmed,q_stem_ordered
+The other 2 will still light.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,2 light,2 light,2 light
+They will stay lit.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,stay lit,stay lit,lit stay
+Only the middle bulb will go out.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,middle bulb,middl bulb,bulb middl
+They will stay light.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,stay light,stay light,light stay
+"Well first I think it is a series, so it will be a problem.",If the middle bulb burns out the other 2 bulbs will stay lit.,0,11,The other 2 will still light.,think series problem,think seri problem,problem seri think
+The other ones will work even better.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,ones work better,one work better,better one work
+All of them will go out.,If the middle bulb burns out the other 2 bulbs will stay lit.,0,11,The other 2 will still light.,,,
+They will still be burning.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,burning,burn,burn
+They bulbs will not go out.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,bulbs,bulb,bulb
+They will stay lit.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,stay lit,stay lit,lit stay
+They will stay light.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,stay light,stay light,light stay
+The 2 other bulbs will run if the middle one burns out.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,2 bulbs run middle burns,2 bulb run middl burn,2 bulb burn middl run
+Nothing will happen.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,happen,happen,happen
+The left bulb will still be lighting because the diagram is a parallel.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,left bulb lighting diagram parallel,left bulb light diagram parallel,bulb diagram left light parallel
+If it is a parallel circuit it will stay lit. If it is a series circuit it will not stay light.,If the middle bulb burns out the other 2 bulbs will stay lit.,0,11,The other 2 will still light.,parallel circuit stay lit series circuit stay light,parallel circuit stay lit seri circuit stay light,circuit circuit light lit parallel seri stay stay
+If one goes out then the 2 will stay on.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,goes 2 stay,goe 2 stay,2 goe stay
+The 2 bulbs will stay lit.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,2 bulbs stay lit,2 bulb stay lit,2 bulb lit stay
+The bulbs will stay lit.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,bulbs stay lit,bulb stay lit,bulb lit stay
+The rest stay on.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,rest stay,rest stay,rest stay
+If the middle bulb burns out the other 2 will burn out also.,If the middle bulb burns out the other 2 bulbs will stay lit.,0,11,The other 2 will still light.,middle bulb burns 2 burn,middl bulb burn 2 burn,2 bulb burn burn middl
+The other bulbs will stay on.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,bulbs stay,bulb stay,bulb stay
+The other 2 bulbs will stay running the whole time the circuit is closed.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,2 bulbs stay running time circuit closed,2 bulb stay run time circuit close,2 bulb circuit close run stay time
+The other 2 will stay lit.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,2 stay lit,2 stay lit,2 lit stay
+If one burns out the rest will stay on.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,burns rest stay,burn rest stay,burn rest stay
+The other bulbs will stay on because it is a parallel circuit.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,bulbs stay parallel circuit,bulb stay parallel circuit,bulb circuit parallel stay
+The top bulb will still light up.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,bulb light,bulb light,bulb light
+The third will not burn out.,If the middle bulb burns out the other 2 bulbs will stay lit.,0,11,The other 2 will still light.,burn,burn,burn
+The other bulbs will still light.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,bulbs light,bulb light,bulb light
+Nothing will happen.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,happen,happen,happen
+If the middle bulb burns out the 2 would burn out.,If the middle bulb burns out the other 2 bulbs will stay lit.,0,11,The other 2 will still light.,middle bulb burns 2 burn,middl bulb burn 2 burn,2 bulb burn burn middl
+The bulbs do not burn out.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,bulbs burn,bulb burn,bulb burn
+It will still work.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,work,work,work
+The light will still run.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,light run,light run,light run
+The 2 bulbs will still be lit when it goes out.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,2 bulbs lit goes,2 bulb lit goe,2 bulb goe lit
+They will all cut off.,If the middle bulb burns out the other 2 bulbs will stay lit.,0,11,The other 2 will still light.,cut,cut,cut
+If the middle one burns out the other will still light.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,middle burns light,middl burn light,burn light middl
+No.,If the middle bulb burns out the other 2 bulbs will stay lit.,0,11,The other 2 will still light.,,,
+I think they will not go out.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,think,think,think
+If the middle bulb burns out the other 2 bulbs will stay lit.,If the middle bulb burns out the other 2 bulbs will stay lit.,1,11,The other 2 will still light.,middle bulb burns 2 bulbs stay lit,middl bulb burn 2 bulb stay lit,2 bulb bulb burn lit middl stay

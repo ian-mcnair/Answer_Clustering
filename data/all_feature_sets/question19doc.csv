@@ -1,0 +1,38 @@
+student_answer,teacher_answer,label,question_id,q_answer,q_stopwords,q_stemmed,q_stem_ordered
+The motor will still run.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor run,motor run,motor run
+The motor will burn out.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor burn,motor burn,burn motor
+The motor will go out too.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor,motor,motor
+The motor will still run.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor run,motor run,motor run
+It would stay on.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,stay,stay,stay
+It would still work.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,work,work,work
+It will run the same it is a parallel.,The motor will continue to run because the motor still has a pathway to the D-cell.,1,19,The motor will still run.,run parallel,run parallel,parallel run
+The motor will keep going until the D-Cell runs out.,The motor will continue to run because the motor still has a pathway to the D-cell.,1,19,The motor will still run.,motor going dcell runs,motor go dcell run,dcell go motor run
+The motor will stop running.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor stop running,motor stop run,motor run stop
+The motor will still run because it is a parallel circuit.,The motor will continue to run because the motor still has a pathway to the D-cell.,1,19,The motor will still run.,motor run parallel circuit,motor run parallel circuit,circuit motor parallel run
+It will still run.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,run,run,run
+Nothing will happen. It will still run.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,happen run,happen run,happen run
+They both go out.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,,,
+The motor will quit because it is in a series if one thing runs out the rest that are hooked up to it will not work.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor quit series thing runs rest hooked work,motor quit seri thing run rest hook work,hook motor quit rest run seri thing work
+The motor will stay on because the wire is coming out of the positive end and the back.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor stay wire coming positive end,motor stay wire come posit end,come end motor posit stay wire
+If the bulb shuts off the motor will turn off because it is a series circuit.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,bulb shuts motor turn series circuit,bulb shut motor turn seri circuit,bulb circuit motor seri shut turn
+The motor will stay on.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor stay,motor stay,motor stay
+The motor will not work.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor work,motor work,motor work
+The motor will stop.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor stop,motor stop,motor stop
+If the light bulb burns out the motor will keep on going.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,light bulb burns motor going,light bulb burn motor go,bulb burn go light motor
+The motor will keep going.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor going,motor go,go motor
+The motor will still keep running.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor running,motor run,motor run
+The motor will still be running.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor running,motor run,motor run
+There will be no electricity.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,electricity,electr,electr
+The motor will go out.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor,motor,motor
+The motor will run.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor run,motor run,motor run
+"If the light bulb burns out, the motor will not work.",The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,light bulb burns motor work,light bulb burn motor work,bulb burn light motor work
+The motor will stop working.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor stop working,motor stop work,motor stop work
+It would not work.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,work,work,work
+The motor will still work.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor work,motor work,motor work
+Nothing will happen.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,happen,happen,happen
+The motor will stop.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor stop,motor stop,motor stop
+The motor will run.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor run,motor run,motor run
+The motor is going to keep going when the light bulb goes out.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,motor going going light bulb goes,motor go go light bulb goe,bulb go go goe light motor
+It will still run.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,run,run,run
+It will still run because it is not sharing a wire like a series does.,The motor will continue to run because the motor still has a pathway to the D-cell.,0,19,The motor will still run.,run sharing wire like series,run share wire like seri,like run seri share wire
+The motor will continue to run because the motor still has a pathway to the D-cell.,The motor will continue to run because the motor still has a pathway to the D-cell.,1,19,The motor will still run.,motor continue run motor pathway dcell,motor continu run motor pathway dcell,continu dcell motor motor pathway run

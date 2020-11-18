@@ -1,0 +1,38 @@
+student_answer,teacher_answer,label,question_id,q_answer,q_stopwords,q_stemmed,q_stem_ordered
+Carbon Dioxide carbon dioxide.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,carbon dioxide carbon dioxide,carbon dioxid carbon dioxid,carbon carbon dioxid dioxid
+There is sugar in the mixture.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,sugar mixture,sugar mixtur,mixtur sugar
+The chemical reaction indicates that it has a lot of sugar in it.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,chemical reaction indicates lot sugar,chemic reaction indic lot sugar,chemic indic lot reaction sugar
+It indicates that there is acid.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,indicates acid,indic acid,acid indic
+The chemical reaction indicates sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,chemical reaction indicates sugar,chemic reaction indic sugar,chemic indic reaction sugar
+The food has sugar in it.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,food sugar,food sugar,food sugar
+"Chemical reaction means it has what you are looking for, sugar, acid, fat.",The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,chemical reaction means looking sugar acid fat,chemic reaction mean look sugar acid fat,acid chemic fat look mean reaction sugar
+That it contains sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,contains sugar,contain sugar,contain sugar
+That the food she tested did contain sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,food tested contain sugar,food test contain sugar,contain food sugar test
+This chemical indicates sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,chemical indicates sugar,chemic indic sugar,chemic indic sugar
+It had acid.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,acid,acid,acid
+It indicates that sugar is in the food.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,indicates sugar food,indic sugar food,food indic sugar
+It indicates that there is sugar in that food.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,indicates sugar food,indic sugar food,food indic sugar
+It indicates that sugar is in the food.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,indicates sugar food,indic sugar food,food indic sugar
+This means that there was acid and or sugar in the product.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,means acid sugar product,mean acid sugar product,acid mean product sugar
+It indicates that it has food in it.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,indicates food,indic food,food indic
+It indicates there is sugar in the food.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,indicates sugar food,indic sugar food,food indic sugar
+It indicates that there is sugar in the food.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,indicates sugar food,indic sugar food,food indic sugar
+It indicates a sugar test to see how much sugar there is.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,indicates sugar test sugar,indic sugar test sugar,indic sugar sugar test
+It probably has a lot of acid.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,probably lot acid,probabl lot acid,acid lot probabl
+It indicates carbon dioxide.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,indicates carbon dioxide,indic carbon dioxid,carbon dioxid indic
+That is has a lot of acid and vitamin C.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,lot acid vitamin c,lot acid vitamin c,acid c lot vitamin
+That there is sugar in the food.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,sugar food,sugar food,food sugar
+That it has a lot of acid and sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,lot acid sugar,lot acid sugar,acid lot sugar
+The reaction indicates that it has carbon dioxide.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,reaction indicates carbon dioxide,reaction indic carbon dioxid,carbon dioxid indic reaction
+The chemical reaction indicates sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,chemical reaction indicates sugar,chemic reaction indic sugar,chemic indic reaction sugar
+That there is acid present yeast indicates sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,acid present yeast indicates sugar,acid present yeast indic sugar,acid indic present sugar yeast
+That the food had sugar in it and carbon dioxide.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,food sugar carbon dioxide,food sugar carbon dioxid,carbon dioxid food sugar
+It indicates that the it has acid in it.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,indicates acid,indic acid,acid indic
+The reaction indicates that yeast contains acid.,The food contains sugar.,0,14,Carbon Dioxide carbon dioxide.,reaction indicates yeast contains acid,reaction indic yeast contain acid,acid contain indic reaction yeast
+The she tested sugar and it also indicates that the water was too hot.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,tested sugar indicates water hot,test sugar indic water hot,hot indic sugar test water
+The chemical indicated carbon dioxide and sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,chemical indicated carbon dioxide sugar,chemic indic carbon dioxid sugar,carbon chemic dioxid indic sugar
+It indicates how much sugar there is.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,indicates sugar,indic sugar,indic sugar
+The chemical reaction indicates how much sugar is in the food.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,chemical reaction indicates sugar food,chemic reaction indic sugar food,chemic food indic reaction sugar
+That the food she tested had a lot of sugar and because she probably put sugar in it.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,food tested lot sugar probably sugar,food test lot sugar probabl sugar,food lot probabl sugar sugar test
+This chemical reaction indicates that there is sugar presence in the sample of the food.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,chemical reaction indicates sugar presence sample food,chemic reaction indic sugar presenc sampl food,chemic food indic presenc reaction sampl sugar
+The food contains sugar.,The food contains sugar.,1,14,Carbon Dioxide carbon dioxide.,food contains sugar,food contain sugar,contain food sugar

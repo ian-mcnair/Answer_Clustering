@@ -1,0 +1,37 @@
+student_answer,teacher_answer,label,question_id
+The light bulb will work.,The motor will run.,0,69
+Only the motor will run.,The motor will run.,1,69
+The motor will start running.,The motor will run.,1,69
+The motor will run.,The motor will run.,1,69
+Nothing.,The motor will run.,0,69
+The motor will run.,The motor will run.,1,69
+The motor will turn on if she moves it to the right.,The motor will run.,1,69
+The light bulb will light.,The motor will run.,0,69
+The motor will run.,The motor will run.,1,69
+The motor will start.,The motor will run.,1,69
+The motor will run.,The motor will run.,1,69
+The electricity is moving through the circuit.,The motor will run.,1,69
+It will work.,The motor will run.,1,69
+It will turn off.,The motor will run.,0,69
+The bulb will light.,The motor will run.,0,69
+The motor will work.,The motor will run.,1,69
+It will cut off the light and motor.,The motor will run.,0,69
+It will turn on.,The motor will run.,1,69
+It will turn on.,The motor will run.,1,69
+The motor will run.,The motor will run.,1,69
+The motor will turn on.,The motor will run.,1,69
+The motor will work.,The motor will run.,1,69
+The motor and light goes on.,The motor will run.,1,69
+The motor will only run.,The motor will run.,1,69
+The light will turn off.,The motor will run.,0,69
+It will work.,The motor will run.,0,69
+The motor will go on.,The motor will run.,1,69
+The motor will run.,The motor will run.,1,69
+It will light up because everything will work if it is all hooked up.,The motor will run.,0,69
+The motor will run.,The motor will run.,1,69
+When the switch is moved nothing will work.,The motor will run.,0,69
+It will stay the same it will be a parallel circuit.,The motor will run.,0,69
+"If you turn the switch to the right, the motor will run.",The motor will run.,1,69
+It will come on.,The motor will run.,1,69
+It will go on.,The motor will run.,1,69
+The motor will run.,The motor will run.,1,69

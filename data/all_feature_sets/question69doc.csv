@@ -1,0 +1,37 @@
+student_answer,teacher_answer,label,question_id,q_answer,q_stopwords,q_stemmed,q_stem_ordered
+The light bulb will work.,The motor will run.,0,69,The light bulb will work.,light bulb work,light bulb work,bulb light work
+Only the motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+The motor will start running.,The motor will run.,1,69,The light bulb will work.,motor start running,motor start run,motor run start
+The motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+Nothing.,The motor will run.,0,69,The light bulb will work.,,,
+The motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+The motor will turn on if she moves it to the right.,The motor will run.,1,69,The light bulb will work.,motor turn moves right,motor turn move right,motor move right turn
+The light bulb will light.,The motor will run.,0,69,The light bulb will work.,light bulb light,light bulb light,bulb light light
+The motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+The motor will start.,The motor will run.,1,69,The light bulb will work.,motor start,motor start,motor start
+The motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+The electricity is moving through the circuit.,The motor will run.,1,69,The light bulb will work.,electricity moving circuit,electr move circuit,circuit electr move
+It will work.,The motor will run.,1,69,The light bulb will work.,work,work,work
+It will turn off.,The motor will run.,0,69,The light bulb will work.,turn,turn,turn
+The bulb will light.,The motor will run.,0,69,The light bulb will work.,bulb light,bulb light,bulb light
+The motor will work.,The motor will run.,1,69,The light bulb will work.,motor work,motor work,motor work
+It will cut off the light and motor.,The motor will run.,0,69,The light bulb will work.,cut light motor,cut light motor,cut light motor
+It will turn on.,The motor will run.,1,69,The light bulb will work.,turn,turn,turn
+It will turn on.,The motor will run.,1,69,The light bulb will work.,turn,turn,turn
+The motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+The motor will turn on.,The motor will run.,1,69,The light bulb will work.,motor turn,motor turn,motor turn
+The motor will work.,The motor will run.,1,69,The light bulb will work.,motor work,motor work,motor work
+The motor and light goes on.,The motor will run.,1,69,The light bulb will work.,motor light goes,motor light goe,goe light motor
+The motor will only run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+The light will turn off.,The motor will run.,0,69,The light bulb will work.,light turn,light turn,light turn
+It will work.,The motor will run.,0,69,The light bulb will work.,work,work,work
+The motor will go on.,The motor will run.,1,69,The light bulb will work.,motor,motor,motor
+The motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+It will light up because everything will work if it is all hooked up.,The motor will run.,0,69,The light bulb will work.,light work hooked,light work hook,hook light work
+The motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run
+When the switch is moved nothing will work.,The motor will run.,0,69,The light bulb will work.,switch moved work,switch move work,move switch work
+It will stay the same it will be a parallel circuit.,The motor will run.,0,69,The light bulb will work.,stay parallel circuit,stay parallel circuit,circuit parallel stay
+"If you turn the switch to the right, the motor will run.",The motor will run.,1,69,The light bulb will work.,turn switch right motor run,turn switch right motor run,motor right run switch turn
+It will come on.,The motor will run.,1,69,The light bulb will work.,come,come,come
+It will go on.,The motor will run.,1,69,The light bulb will work.,,,
+The motor will run.,The motor will run.,1,69,The light bulb will work.,motor run,motor run,motor run

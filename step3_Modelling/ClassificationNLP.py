@@ -1,13 +1,9 @@
 import pandas as pd
-from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN, OPTICS, Birch
 from sklearn.metrics import accuracy_score
 import sentence_to_feature as sf
 from sklearn.preprocessing import MinMaxScaler
 
 from sklearn.linear_model import LogisticRegression
-# from sklearn.svm import SVC
-# from sklearn.naive_bayes import GaussianNB
-# from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
 
