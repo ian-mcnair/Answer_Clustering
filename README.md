@@ -1,4 +1,4 @@
-# Answer Clustering to Automate Short Response Grading
+# Answer Clustering to Automate Short Response Grading [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/ian-mcnair/answer_clustering/app.py)
 
 ### Goal: Create a model that lets a teacher input their student grades and their answer, which then grades each student reponse
 
