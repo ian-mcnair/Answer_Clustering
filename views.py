@@ -82,3 +82,97 @@ def data_exploration():
             info.columns = ['Feature Name', 'Data Type']
             st.markdown('### Datatype Info')
             st.write(info)
+            
+def clustering():
+    st.markdown("## **Master's Project**")
+    st.markdown('---')
+    st.markdown("# **Unsupervised Learning | Clustering**")
+    
+    st.markdown("### Choose a Dataset")
+    files = tools.get_files()
+    option = st.selectbox(
+        'Select a Teacher Answer',
+        files['name']
+    )
+    
+    index = files['name'].index(option)
+    st.write('You selected:', index)
+
+    doc= files['doc'][index] 
+    data= files['data'][index]
+    
+    st.markdown("## Modeling Example")
+    st.markdown('**Select the below based on what you want to see:**')
+    chart_flag = st.checkbox('Display Reduced-Dimensionality Chart')
+    model_flag = st.checkbox('Display Model Info and Performance')    
+    
+    nlp = Clustering_NLP(data, doc)
+    nlp.correct_cluster_labels()
+    
+    if chart_flag:
+        col1, col2 = st.beta_columns(2)
+        fig1, ax1 = charts.plot_pca_chart(data, doc['label'], nlp.model.cluster_centers_)
+        fig2, ax2 = charts.plot_tsne_chart(data, doc['label'], nlp.model.cluster_centers_)
+        with col1:
+            st.pyplot(fig = fig1)
+            
+        with col2:
+            st.pyplot(fig = fig2)
+
+    if model_flag:
+        st.markdown('## Model Data') 
+        st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
+        st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
+        
+        
+        results = doc[['student_answer', 'label', 'cluster']]
+        try_it = st.checkbox('Try it Yourself!')
+        explore_flag = st.checkbox('Explore Data')
+        if try_it:
+            tryit(nlp)
+                
+            
+        if explore_flag:
+            st.markdown(f"""**Dataset Length: {len(results)}** """)
+            start, end = st.slider(
+                label = 'Data View Select',
+                min_value = 0,
+                max_value = len(nlp.doc)-1,
+                value = (0,5)
+            )
+            st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
+            for i in range(int(start),int(end)+1):
+                st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'cluster'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
+                
+                
+def tryit(nlp):
+    st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
+    answer = st.text_input("Submit Your Own Answer")
+    if answer != '':
+        nlp.create_features(answer)
+#         st.write(nlp.sep)
+       
+#         st.write(nlp.new_answers.iloc[:,nlp.sep:])
+#         st.write(nlp.new_answers.columns)
+#         st.write(nlp.doc.columns)
+#         st.write(nlp.data.columns)
+#         st.write(nlp.new_answers.iloc[:,nlp.sep:].columns)
+        # It is missing some vars for some reason?
+        # THERE IS A WEIRD DATA ISSUE 
+        """
+        Weird issue where a random dataset gets injected into it
+        maybe an object or caching issue?
+        """
+        nlp.grade_new_answer()
+        prediction = nlp.new_answers.iloc[0,6]
+        pred = ''
+        if prediction == 1:
+            pred = 'correct'
+            st.balloons()
+        else:
+            pred = "incorrect"
+        
+        if pred != '':
+            st.markdown(f'## **Your answer is predicted {pred}**')
+            
+        st.write(nlp.new_answers)

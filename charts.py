@@ -80,7 +80,7 @@ def plot_tsne_chart(data, labels, cluster_centers):
     
 def plot_heatmap(df):
     
-    fig, ax = plt.subplots(figsize = (7, 10))
+    fig, ax = plt.subplots(figsize = (6, 10))
     ax = sns.heatmap(df, yticklabels = True, linewidths = 1)
     return fig
    
