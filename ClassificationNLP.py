@@ -1,8 +1,9 @@
 import pandas as pd
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, precision_score, recall_score, cohen_kappa_score
 import sentence_to_feature as sf
-from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import MinMaxScaler
+
+from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix
 
@@ -14,24 +15,22 @@ class Classification_NLP:
         self.doc = doc
         if test_size == 'auto':
             test_size = 1 - round(6/len(data),2)
-            print(test_size)
+#             print(test_size)
         self.X_train, self.X_test, self.y_train, self.y_test = self.data_split(test_size)
         self.teacher_answer = self.doc.teacher_answer.values[0]
         self.model = LogisticRegression()
         self.model.fit(self.X_train, self.y_train)
         self.doc['prediction'] = self.model.predict(self.data)
-        self.pred = self.model.predict(self.X_test)
         self.score = -1
+        self.f1 = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
-        self.sep = len(self.doc.columns.tolist()) - 2
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
-#         self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
+        self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
         
     
     def data_split(self, test_size):
-        
-        return train_test_split(self.data, self.doc.label, test_size = test_size, stratify = self.doc.label, random_state = 42)
+         return train_test_split(self.data, self.doc.label, test_size = test_size, stratify = self.doc.label)
         
     def create_scaler(self, df, col, func):
         word_counts = df[col].apply(func)
@@ -40,15 +39,31 @@ class Classification_NLP:
         return sc
         
     def accuracy(self):
-        # Doesn't work, says int not callable
         test_set_score = accuracy_score(self.y_test, self.model.predict(self.X_test))
         
         #Total score
         self.score = accuracy_score(self.doc.label, self.doc.prediction)
         return self.score, test_set_score
     
-    def grade_new_answer(self):
-        self.new_answers['prediction'] = self.model.predict(self.new_answers.iloc[:, self.sep:])
+    def f1_scorer(self):
+        self.f1 = f1_score(self.doc.label, self.doc.prediction)
+        return self.f1
+    
+    def balanced_accuracy(self):
+        self.bal_acc = balanced_accuracy_score(self.doc.label, self.doc.prediction, adjusted = True)
+        return self.bal_acc
+    
+    def precision(self):
+        return precision_score(self.doc.label, self.doc.prediction)
+    
+    def recall(self):
+        return recall_score(self.doc.label, self.doc.prediction)
+    
+    def kappa(self, weighting):
+        return cohen_kappa_score(self.doc.label, self.doc.prediction, weights = weighting)
+    
+    def score_new_sentence(self, sentence_data):
+        self.new_answers['prediction'] = self.model.predict(sentence_data)
     
     def create_features(self, answer):
         """
@@ -61,10 +76,14 @@ class Classification_NLP:
         Basically need to create all the features for the new answer
         """
         # Get the teacher's stuff
+        a_answer = self.teacher_answer
+        a_answer_ordered = sf.order_sentence(a_answer)
         a_stopwords = sf.remove_stopwords(self.teacher_answer)
         a_stemmed = sf.stem_sentence(a_stopwords)
+        a_stopwords_ordered = sf.order_sentence(a_stemmed)
         a_stemmed_ordered = sf.order_sentence(a_stemmed)
-
+        a_lem = sf.lemmatize_sentence(self.teacher_answer)
+        a_lem_ordered = sf.order_sentence(a_lem)
         teacher_answers = [
 
             a_stemmed,
@@ -107,8 +126,10 @@ class Classification_NLP:
         I should use ALLL The combinations, ordered, stem/lem
         """
         types_of_sentences = [
+
             'q_stemmed',
             'q_stem_ordered',
+
         ]
         
         for sent_type, teach_ans in zip(types_of_sentences, teacher_answers):

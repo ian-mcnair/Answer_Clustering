@@ -1,9 +1,8 @@
 import pandas as pd
 from sklearn.cluster import KMeans
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, precision_score, recall_score, cohen_kappa_score
 import sentence_to_feature as sf
 from sklearn.preprocessing import MinMaxScaler
-import streamlit as st
 
 
 class Clustering_NLP:
@@ -13,12 +12,11 @@ class Clustering_NLP:
         self.doc = doc
         self.teacher_answer = self.doc.teacher_answer.values[0]
         self.model = KMeans(2).fit(data)
-        st.write(doc)
-        st.write(self.model.labels_)
         self.doc['cluster'] = self.model.labels_
-        self.score = -1
+        self.acc = -1
+        self.f1 = -1
+        self.bal_acc = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
-        self.sep = len(self.doc.columns.tolist()) -2
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
 #         self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
@@ -47,17 +45,32 @@ class Clustering_NLP:
             self.flag = True
         
     def accuracy(self):
-        # Doesn't work, says int not callable
-
-        self.score = accuracy_score(self.doc.label, self.doc.cluster)
-        return self.score
+        self.acc = accuracy_score(self.doc.label, self.doc.cluster)
+        return self.acc
     
-    def grade_new_answer(self):
-        self.new_answers['cluster'] = self.model.predict(self.new_answers.iloc[:, self.sep:])
+    def f1_scorer(self):
+        self.f1 = f1_score(self.doc.label, self.doc.cluster)
+        return self.f1
+    
+    def balanced_accuracy(self):
+        self.bal_acc = balanced_accuracy_score(self.doc.label, self.doc.cluster, adjusted = True)
+        return self.bal_acc
+    
+    def precision(self):
+        return precision_score(self.doc.label, self.doc.cluster)
+    
+    def recall(self):
+        return recall_score(self.doc.label, self.doc.cluster)
+    
+    def kappa(self, weighting):
+        return cohen_kappa_score(self.doc.label, self.doc.cluster, weights = weighting)
+    
+    def score_new_sentences(self, sentence_data):
+        self.new_answers['cluster'] = self.model.predict(sentence_data)
         if self.flag:
             self.new_answers['cluster'] = (self.new_answers['cluster'] - 1)**2
     
-    def create_features(self, answer):
+    def group_new_answer(self, answer):
         """
         NOTES
         The below actually has MORE features than what my documentation is showing
