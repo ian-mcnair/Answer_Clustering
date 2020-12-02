@@ -62,8 +62,8 @@ class Clustering_NLP:
     def recall(self):
         return recall_score(self.doc.label, self.doc.cluster)
     
-    def kappa(self, weighting):
-        return cohen_kappa_score(self.doc.label, self.doc.cluster, weights = weighting)
+    def kappa(self):
+        return cohen_kappa_score(self.doc.label, self.doc.cluster)
     
     def score_new_sentences(self, sentence_data):
         self.new_answers['cluster'] = self.model.predict(sentence_data)

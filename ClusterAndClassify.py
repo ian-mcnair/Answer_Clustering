@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, precision_score, recall_score, cohen_kappa_score
-class Automated_SAR_Grading:
+class Cluster_and_Classify:
     def __init__(self, df, doc, answer_row = -1):
         self.doc = doc.copy()
         self.df = df.copy()

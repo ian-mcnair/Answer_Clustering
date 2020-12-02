@@ -11,7 +11,8 @@ def run():
         'Project Introduction',
         'Data Exploration',
         'Clustering',
-        'Classification'
+        'Classification',
+        'Combination'
         ),
         index = 0
     )
@@ -24,6 +25,8 @@ def run():
         views.clustering()
     elif pageview == 'Classification':
         views.classification()
+    elif pageview == 'Combination':
+        views.combo()
 
 
 if __name__ == "__main__":
