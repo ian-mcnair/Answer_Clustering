@@ -10,7 +10,8 @@ def run():
     pageview = st.sidebar.radio('Topic Select',(
         'Project Introduction',
         'Data Exploration',
-        'Clustering'
+        'Clustering',
+        'Classification'
         ),
         index = 0
     )
@@ -21,7 +22,8 @@ def run():
         views.data_exploration()
     elif pageview == 'Clustering':
         views.clustering()
-    
+    elif pageview == 'Classification':
+        views.classification()
 
 
 if __name__ == "__main__":

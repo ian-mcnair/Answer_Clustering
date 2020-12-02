@@ -146,6 +146,69 @@ def clustering():
             for i in range(int(start),int(end)+1):
                 st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'cluster'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
                 
+
+def classification():
+    st.markdown("## **Master's Project**")
+    st.markdown('---')
+    st.markdown("# **Supervised Learning | Classification**")
+    
+    st.markdown("### Choose a Dataset")
+    files = tools.get_files()
+    option = st.selectbox(
+        'Select a Teacher Answer',
+        files['name']
+    )
+    
+    index = files['name'].index(option)
+    st.write('You selected:', index)
+
+    doc= files['doc'][index] 
+    data= files['data'][index]
+
+   
+    st.markdown("## Modeling Example")
+    st.markdown('**Select the below based on what you want to see:**')
+    model_flag = st.checkbox('Display Model Info and Performance')
+    
+    test_size = st.number_input(
+            'Test Size',
+            min_value = 0.01,
+            max_value = 0.91,
+            value = .75,
+            step = 0.05
+            )
+    nlp = Classification_NLP(data, doc, test_size)
+    st.markdown(f'Training Set Size: {len(nlp.X_train)}')
+    st.markdown(f'Test Set Size: {len(nlp.X_test)}')
+    
+    if model_flag:
+        st.markdown('## Model Data')
+        
+        _, accuracy =  nlp.accuracy()
+        st.markdown(f'### **Test Set Accuracy of Model: {round(accuracy, 3)}**  ')
+        st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc.label, nlp.doc.prediction))
+        
+        
+        results = doc[['student_answer', 'label', 'prediction']]
+        try_it = st.checkbox('Try it Yourself!')
+        explore_flag = st.checkbox('Explore Data')
+        
+        if try_it:
+            tryit(nlp)
+        if explore_flag:
+            st.markdown(f"""**Dataset Length: {len(results)}** """)
+            start, end = st.slider(
+                label = 'Data View Select',
+                min_value = 0,
+                max_value = len(nlp.doc)-1,
+                value = (0,5)
+            )
+            st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
+            for i in range(int(start),int(end)+1):
+                if nlp.doc.loc[i,'label'] != nlp.doc.loc[i,'prediction']:
+                    st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'prediction'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
+                else:
+                    st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'prediction'])}    {str(nlp.doc.loc[i,'student_answer'])}""")                
                 
 def tryit(nlp):
     st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
