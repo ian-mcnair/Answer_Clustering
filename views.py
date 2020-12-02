@@ -5,6 +5,7 @@ import text
 import base64
 from ClusteringNLP import Clustering_NLP
 from ClassificationNLP import Classification_NLP
+from ClusterAndClassify import Cluster_and_Classify
 from sklearn.metrics import accuracy_score
 import charts
 import tools
