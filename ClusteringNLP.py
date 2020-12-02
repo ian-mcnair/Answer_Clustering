@@ -13,6 +13,8 @@ class Clustering_NLP:
         self.doc = doc
         self.teacher_answer = self.doc.teacher_answer.values[0]
         self.model = KMeans(2).fit(data)
+        st.write(doc)
+        st.write(self.model.labels_)
         self.doc['cluster'] = self.model.labels_
         self.score = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
