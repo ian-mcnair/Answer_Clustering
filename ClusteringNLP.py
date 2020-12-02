@@ -70,7 +70,7 @@ class Clustering_NLP:
         if self.flag:
             self.new_answers['cluster'] = (self.new_answers['cluster'] - 1)**2
     
-    def group_new_answer(self, answer):
+    def create_features(self, answer):
         """
         NOTES
         The below actually has MORE features than what my documentation is showing

@@ -26,7 +26,6 @@ class Classification_NLP:
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
-#         self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
         
     
     def data_split(self, test_size):
@@ -59,10 +58,10 @@ class Classification_NLP:
     def recall(self):
         return recall_score(self.doc.label, self.doc.prediction)
     
-    def kappa(self, weighting):
-        return cohen_kappa_score(self.doc.label, self.doc.prediction, weights = weighting)
+    def kappa(self):
+        return cohen_kappa_score(self.doc.label, self.doc.prediction)
     
-    def score_new_sentence(self, sentence_data):
+    def score_new_sentences(self, sentence_data):
         self.new_answers['prediction'] = self.model.predict(sentence_data)
     
     def create_features(self, answer):
@@ -82,8 +81,8 @@ class Classification_NLP:
         a_stemmed = sf.stem_sentence(a_stopwords)
         a_stopwords_ordered = sf.order_sentence(a_stemmed)
         a_stemmed_ordered = sf.order_sentence(a_stemmed)
-        a_lem = sf.lemmatize_sentence(self.teacher_answer)
-        a_lem_ordered = sf.order_sentence(a_lem)
+#         a_lem = sf.lemmatize_sentence(self.teacher_answer)
+#         a_lem_ordered = sf.order_sentence(a_lem)
         teacher_answers = [
 
             a_stemmed,

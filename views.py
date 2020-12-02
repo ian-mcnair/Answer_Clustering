@@ -168,7 +168,9 @@ def classification():
    
     st.markdown("## Modeling Example")
     st.markdown('**Select the below based on what you want to see:**')
+    chart_flag = st.checkbox('Display Logistic Function Chart')
     model_flag = st.checkbox('Display Model Info and Performance')
+    
     
     test_size = st.number_input(
             'Test Size',
@@ -181,11 +183,17 @@ def classification():
     st.markdown(f'Training Set Size: {len(nlp.X_train)}')
     st.markdown(f'Test Set Size: {len(nlp.X_test)}')
     
+    if chart_flag:
+        st.pyplot(fig = charts.plot_logistic_function(nlp, test_size))
     if model_flag:
         st.markdown('## Model Data')
         
         _, accuracy =  nlp.accuracy()
         st.markdown(f'### **Test Set Accuracy of Model: {round(accuracy, 3)}**  ')
+        st.markdown(f'### **Balanced Accuracy of Model: {round(nlp.balanced_accuracy(), 3)}**  ')
+        st.markdown(f'### **F1 Score of Model: {round(nlp.f1_scorer(), 3)}**  ')
+        st.markdown(f'### **Cohens Kappa of Model: {round(nlp.kappa(), 3)}**  ')
+        
         st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc.label, nlp.doc.prediction))
         
         
@@ -215,20 +223,11 @@ def tryit(nlp):
     answer = st.text_input("Submit Your Own Answer")
     if answer != '':
         nlp.create_features(answer)
-#         st.write(nlp.sep)
-       
-#         st.write(nlp.new_answers.iloc[:,nlp.sep:])
-#         st.write(nlp.new_answers.columns)
-#         st.write(nlp.doc.columns)
-#         st.write(nlp.data.columns)
-#         st.write(nlp.new_answers.iloc[:,nlp.sep:].columns)
-        # It is missing some vars for some reason?
-        # THERE IS A WEIRD DATA ISSUE 
         """
         Weird issue where a random dataset gets injected into it
         maybe an object or caching issue?
         """
-        nlp.grade_new_answer()
+        nlp.score_new_sentences(nlp.new_answers.iloc[:, 7:])
         prediction = nlp.new_answers.iloc[0,6]
         pred = ''
         if prediction == 1:
