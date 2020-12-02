@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, precision_score, recall_score, cohen_kappa_score
 import sentence_to_feature as sf
 from sklearn.preprocessing import MinMaxScaler
 
@@ -22,6 +22,7 @@ class Classification_NLP:
         self.model.fit(self.X_train, self.y_train)
         self.doc['prediction'] = self.model.predict(self.data)
         self.score = -1
+        self.f1 = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
@@ -43,6 +44,23 @@ class Classification_NLP:
         #Total score
         self.score = accuracy_score(self.doc.label, self.doc.prediction)
         return self.score, test_set_score
+    
+    def f1_scorer(self):
+        self.f1 = f1_score(self.doc.label, self.doc.prediction)
+        return self.f1
+    
+    def balanced_accuracy(self):
+        self.bal_acc = balanced_accuracy_score(self.doc.label, self.doc.prediction, adjusted = True)
+        return self.bal_acc
+    
+    def precision(self):
+        return precision_score(self.doc.label, self.doc.prediction)
+    
+    def recall(self):
+        return recall_score(self.doc.label, self.doc.prediction)
+    
+    def kappa(self, weighting):
+        return cohen_kappa_score(self.doc.label, self.doc.prediction, weights = weighting)
     
     def score_new_sentence(self, sentence_data):
         self.new_answers['prediction'] = self.model.predict(sentence_data)

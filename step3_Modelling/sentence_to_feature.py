@@ -123,23 +123,6 @@ def jaccard_similarity(student_answer, teacher_answer):
     c = a.intersection(b)
     return (len(c) / (len(a) + len(b) - len(c)))
     
-def spacy_similarity(doc1, doc2):
-    """
-    Going to remove all words but nouns and compare that way
-    
-    """
-    doc1 =  doc1.translate(doc1.maketrans("","", string.punctuation))
-    doc2 =  doc2.translate(doc1.maketrans("","", string.punctuation))
-    student_answer = nlp(doc1)
-    student_answer = nlp(' '.join([str(x) for x in student_answer if x.pos_ in ['NOUN', 'PROPN']]))
-    teacher_answer = nlp(doc2)
-    teacher_answer = nlp(' '.join([str(x) for x in teacher_answer if x.pos_ in ['NOUN', 'PROPN']]))
-    if len(student_answer) == 0 or len(teacher_answer) == 0:
-        return 0.0
-    else:
-        sim = teacher_answer.similarity(student_answer)
-        return sim
-    
 def cosine_similarity(sentence, answer):
     tokens = set(sentence.split(" ") + answer.split(" "))
     if '' in tokens:

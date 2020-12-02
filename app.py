@@ -9,24 +9,15 @@ def run():
     st.sidebar.markdown("# Navigation")
     pageview = st.sidebar.radio('Topic Select',(
         'Project Introduction',
-        'Clustering',
-        'Classification',
-        'Try it Yourself!',
+        'Data Exploration',
         ),
         index = 0
     )
 
     if pageview == 'Project Introduction':
         views.landing()
-    elif pageview == 'Clustering':
-        views.clustering()
-    elif pageview == 'Classification':
-        views.classification()
-    elif pageview == 'Conclusion':
-        views.conclusion()
-    elif pageview == "Try it Yourself!":
-        st.write("Nothing here yet")
-#         views.tryit()
+    elif pageview == 'Data Exploration':
+        views.data_exploration()
     
 
 

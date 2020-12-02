@@ -14,5 +14,5 @@ def get_files():
             else:
                 df = pd.read_csv(directory + filename)
                 datasets['doc'].append(df)
-                datasets['name'].append(df.teacher_answer.values[0])
+                datasets['name'].append(df.teacher_answer.values[0][0:45] + "...")
     return datasets

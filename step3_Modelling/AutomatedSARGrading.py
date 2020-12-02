@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, precision_score, recall_score, cohen_kappa_score
 class Automated_SAR_Grading:
     def __init__(self, df, doc, answer_row = -1):
         self.doc = doc.copy()
@@ -19,7 +19,7 @@ class Automated_SAR_Grading:
         self.X_test = pd.DataFrame()
         self.y_pred = []
         self.y_true = []
-        self.accuracy = 0
+#         self.accuracy = -1
         self.cm = []
     
     def cluster(self):
@@ -35,9 +35,9 @@ class Automated_SAR_Grading:
             i+=1
         self.df['distances'] = self.df['distances'] ** 0.5
         self.df.loc[int(self.answer_row),'distances'] = -1
-        self.closest = self.df[(self.df.clusters == 1) & (self.df.distances > 0)].nsmallest(3, 'distances').index.values.tolist()
+        self.closest = self.df[(self.df.clusters == 1) & (self.df.distances > 0)].nsmallest(2, 'distances').index.values.tolist()
         self.closest.append(self.answer_row)
-        self.furthest = self.df[(self.df.clusters == 0) & (self.df.distances > 0)].nlargest(3, 'distances').index.values.tolist()
+        self.furthest = self.df[(self.df.clusters == 0) & (self.df.distances > 0)].nlargest(2, 'distances').index.values.tolist()
     
     def correct_cluster_labels(self, answer_row):
         """
@@ -63,8 +63,23 @@ class Automated_SAR_Grading:
         self.y_true = self.doc['label'].values
         return self.y_pred, self.y_true
     
-    def score(self):
+    def accuracy(self):
         return accuracy_score(self.y_true, self.y_pred)
+    
+    def f1_scorer(self):
+        return f1_score(self.y_true, self.y_pred)
+    
+    def balanced_accuracy(self):
+        return balanced_accuracy_score(self.y_true, self.y_pred, adjusted = True)
+    
+    def precision(self):
+        return precision_score(self.y_true, self.y_pred)
+    
+    def recall(self):
+        return recall_score(self.y_true, self.y_pred)
+    
+    def kappa(self, weighting):
+        return cohen_kappa_score(self.y_true, self.y_pred, weights = weighting)
     
     def confusion_mtx(self):
         return confusion_matrix(self.y_true, self.y_pred)
@@ -74,5 +89,5 @@ class Automated_SAR_Grading:
         self.find_train_set_idxs()
         self.create_train_test_sets()
         self.classify()
-        return self.score()
+#         return self.accuracy()
 #         self.confusion_mtx()

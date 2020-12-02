@@ -1,6 +1,6 @@
 import pandas as pd
-from sklearn.cluster import KMeans, AgglomerativeClustering, DBSCAN, OPTICS, Birch
-from sklearn.metrics import accuracy_score
+from sklearn.cluster import KMeans
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, precision_score, recall_score, cohen_kappa_score
 import sentence_to_feature as sf
 from sklearn.preprocessing import MinMaxScaler
 
@@ -13,7 +13,9 @@ class Clustering_NLP:
         self.teacher_answer = self.doc.teacher_answer.values[0]
         self.model = KMeans(2).fit(data)
         self.doc['cluster'] = self.model.labels_
-        self.score = -1
+        self.acc = -1
+        self.f1 = -1
+        self.bal_acc = -1
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
@@ -43,10 +45,25 @@ class Clustering_NLP:
             self.flag = True
         
     def accuracy(self):
-        # Doesn't work, says int not callable
-
-        self.score = accuracy_score(self.doc.label, self.doc.cluster)
-        return self.score
+        self.acc = accuracy_score(self.doc.label, self.doc.cluster)
+        return self.acc
+    
+    def f1_scorer(self):
+        self.f1 = f1_score(self.doc.label, self.doc.cluster)
+        return self.f1
+    
+    def balanced_accuracy(self):
+        self.bal_acc = balanced_accuracy_score(self.doc.label, self.doc.cluster, adjusted = True)
+        return self.bal_acc
+    
+    def precision(self):
+        return precision_score(self.doc.label, self.doc.cluster)
+    
+    def recall(self):
+        return recall_score(self.doc.label, self.doc.cluster)
+    
+    def kappa(self, weighting):
+        return cohen_kappa_score(self.doc.label, self.doc.cluster, weights = weighting)
     
     def score_new_sentences(self, sentence_data):
         self.new_answers['cluster'] = self.model.predict(sentence_data)
