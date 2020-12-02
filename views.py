@@ -145,34 +145,34 @@ def clustering():
                 st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'cluster'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
                 
                 
-def tryit(nlp):
-    st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
-    answer = st.text_input("Submit Your Own Answer")
-    if answer != '':
-        nlp.create_features(answer)
-#         st.write(nlp.sep)
+# def tryit(nlp):
+#     st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
+#     answer = st.text_input("Submit Your Own Answer")
+#     if answer != '':
+#         nlp.create_features(answer)
+# #         st.write(nlp.sep)
        
-#         st.write(nlp.new_answers.iloc[:,nlp.sep:])
-#         st.write(nlp.new_answers.columns)
-#         st.write(nlp.doc.columns)
-#         st.write(nlp.data.columns)
-#         st.write(nlp.new_answers.iloc[:,nlp.sep:].columns)
-        # It is missing some vars for some reason?
-        # THERE IS A WEIRD DATA ISSUE 
-        """
-        Weird issue where a random dataset gets injected into it
-        maybe an object or caching issue?
-        """
-        nlp.grade_new_answer()
-        prediction = nlp.new_answers.iloc[0,6]
-        pred = ''
-        if prediction == 1:
-            pred = 'correct'
-            st.balloons()
-        else:
-            pred = "incorrect"
+# #         st.write(nlp.new_answers.iloc[:,nlp.sep:])
+# #         st.write(nlp.new_answers.columns)
+# #         st.write(nlp.doc.columns)
+# #         st.write(nlp.data.columns)
+# #         st.write(nlp.new_answers.iloc[:,nlp.sep:].columns)
+#         # It is missing some vars for some reason?
+#         # THERE IS A WEIRD DATA ISSUE 
+#         """
+#         Weird issue where a random dataset gets injected into it
+#         maybe an object or caching issue?
+#         """
+#         nlp.grade_new_answer()
+#         prediction = nlp.new_answers.iloc[0,6]
+#         pred = ''
+#         if prediction == 1:
+#             pred = 'correct'
+#             st.balloons()
+#         else:
+#             pred = "incorrect"
         
-        if pred != '':
-            st.markdown(f'## **Your answer is predicted {pred}**')
+#         if pred != '':
+#             st.markdown(f'## **Your answer is predicted {pred}**')
             
-        st.write(nlp.new_answers)
+#         st.write(nlp.new_answers)
