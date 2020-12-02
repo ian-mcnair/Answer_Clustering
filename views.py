@@ -121,30 +121,30 @@ def clustering():
         with col2:
             st.pyplot(fig = fig2)
 
-    if model_flag:
-        st.markdown('## Model Data') 
-        st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
-        st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
+#     if model_flag:
+#         st.markdown('## Model Data') 
+#         st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
+#         st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
         
         
-        results = doc[['student_answer', 'label', 'cluster']]
-        try_it = st.checkbox('Try it Yourself!')
-        explore_flag = st.checkbox('Explore Data')
-        if try_it:
-            tryit(nlp)
+#         results = doc[['student_answer', 'label', 'cluster']]
+#         try_it = st.checkbox('Try it Yourself!')
+#         explore_flag = st.checkbox('Explore Data')
+#         if try_it:
+#             tryit(nlp)
                 
             
-        if explore_flag:
-            st.markdown(f"""**Dataset Length: {len(results)}** """)
-            start, end = st.slider(
-                label = 'Data View Select',
-                min_value = 0,
-                max_value = len(nlp.doc)-1,
-                value = (0,5)
-            )
-            st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
-            for i in range(int(start),int(end)+1):
-                st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'cluster'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
+#         if explore_flag:
+#             st.markdown(f"""**Dataset Length: {len(results)}** """)
+#             start, end = st.slider(
+#                 label = 'Data View Select',
+#                 min_value = 0,
+#                 max_value = len(nlp.doc)-1,
+#                 value = (0,5)
+#             )
+#             st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
+#             for i in range(int(start),int(end)+1):
+#                 st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'cluster'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
                 
                 
 def tryit(nlp):
