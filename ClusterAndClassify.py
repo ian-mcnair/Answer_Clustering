@@ -3,6 +3,8 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, balanced_accuracy_score, f1_score, precision_score, recall_score, cohen_kappa_score
+import streamlit as st
+
 class Cluster_and_Classify:
     def __init__(self, df, doc, answer_row = -1):
         self.doc = doc.copy()
@@ -26,6 +28,7 @@ class Cluster_and_Classify:
         self.model = self.model.fit(self.df)
         self.df['clusters'] = self.model.labels_
         self.correct_cluster_labels(self.answer_row)
+#         st.write(self.df)
         
     def find_train_set_idxs(self):
         i = 0
@@ -35,9 +38,9 @@ class Cluster_and_Classify:
             i+=1
         self.df['distances'] = self.df['distances'] ** 0.5
         self.df.loc[int(self.answer_row),'distances'] = -1
-        self.closest = self.df[(self.df.clusters == 1) & (self.df.distances > 0)].nsmallest(2, 'distances').index.values.tolist()
+        self.closest = self.df[(self.df.distances > 0)].nsmallest(3, 'distances').index.values.tolist()
         self.closest.append(self.answer_row)
-        self.furthest = self.df[(self.df.clusters == 0) & (self.df.distances > 0)].nlargest(2, 'distances').index.values.tolist()
+        self.furthest = self.df[(self.df.distances > 0)].nlargest(3, 'distances').index.values.tolist()
     
     def correct_cluster_labels(self, answer_row):
         """
@@ -78,8 +81,8 @@ class Cluster_and_Classify:
     def recall(self):
         return recall_score(self.y_true, self.y_pred)
     
-    def kappa(self, weighting):
-        return cohen_kappa_score(self.y_true, self.y_pred, weights = weighting)
+    def kappa(self):
+        return cohen_kappa_score(self.y_true, self.y_pred)
     
     def confusion_mtx(self):
         return confusion_matrix(self.y_true, self.y_pred)
@@ -89,5 +92,3 @@ class Cluster_and_Classify:
         self.find_train_set_idxs()
         self.create_train_test_sets()
         self.classify()
-#         return self.accuracy()
-#         self.confusion_mtx()

@@ -12,7 +12,8 @@ def run():
         'Data Exploration',
         'Clustering',
         'Classification',
-        'Combination'
+        'Combination',
+        'Use Your Own Dataset',
         ),
         index = 0
     )
@@ -27,6 +28,8 @@ def run():
         views.classification()
     elif pageview == 'Combination':
         views.combo()
+    elif pageview == 'Use Your Own Dataset':
+        views.application()
 
 
 if __name__ == "__main__":

@@ -125,7 +125,7 @@ def clustering():
             st.pyplot(fig = fig2)
 
     if model_flag:
-        st.markdown('## Model Data') 
+        st.markdown('## Model Data Metrics') 
         st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
         st.markdown(f'### **Balanced Accuracy of Model: {round(nlp.balanced_accuracy(), 3)}**  ')
         st.markdown(f'### **F1 Score of Model: {round(nlp.f1_scorer(), 3)}**  ')
@@ -192,7 +192,7 @@ def classification():
     if chart_flag:
         st.pyplot(fig = charts.plot_logistic_function(nlp, test_size))
     if model_flag:
-        st.markdown('## Model Data')
+        st.markdown('## Model Data Metrics')
         
         _, accuracy =  nlp.accuracy()
         st.markdown(f'### **Test Set Accuracy of Model: {round(accuracy, 3)}**  ')
@@ -250,43 +250,49 @@ def combo():
     
     nlp = 0
     
-    nlp = Clustering_NLP(data, doc)
-    nlp.correct_cluster_labels()
+    nlp = Cluster_and_Classify(data, doc)
+    nlp.run()
     
-#     if chart_flag:
-#         col1, col2 = st.beta_columns(2)
-#         fig1, ax1 = charts.plot_pca_chart(data, doc['label'], nlp.model.cluster_centers_)
-#         fig2, ax2 = charts.plot_tsne_chart(data, doc['label'], nlp.model.cluster_centers_)
-#         with col1:
-#             st.pyplot(fig = fig1)
+    
+    if chart_flag:
+        col1, col2 = st.beta_columns(2)
+        fig1, ax1 = charts.plot_pca_chart(nlp.X_train, nlp.y_train, nlp.model.cluster_centers_)
+        fig2, ax2 = charts.plot_tsne_chart(nlp.X_train, nlp.y_train, nlp.model.cluster_centers_)
+        with col1:
+            st.pyplot(fig = fig1)
             
-#         with col2:
-#             st.pyplot(fig = fig2)
+        with col2:
+            st.pyplot(fig = fig2)
 
-#     if model_flag:
-#         st.markdown('## Model Data') 
-#         st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
-#         st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
+    if model_flag:
+        st.markdown('## Model Data Metrics') 
+        st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
+        st.markdown(f'### **Balanced Accuracy of Model: {round(nlp.balanced_accuracy(), 3)}**  ')
+        st.markdown(f'### **F1 Score of Model: {round(nlp.f1_scorer(), 3)}**  ')
+        st.markdown(f'### **Cohens Kappa of Model: {round(nlp.kappa(), 3)}**  ')
+        st.pyplot(fig = charts.plot_confusion_matrix(nlp.y_true, nlp.y_pred))
         
         
-#         results = doc[['student_answer', 'label', 'cluster']]
-#         try_it = st.checkbox('Try it Yourself!')
-#         explore_flag = st.checkbox('Explore Data')
-#         if try_it:
-#             tryit(nlp)
+        doc['prediction'] = nlp.y_pred
+#         st.write(doc)
+        results = doc[['student_answer', 'label', 'prediction']]
+        try_it = st.checkbox('Try it Yourself!')
+        explore_flag = st.checkbox('Explore Data')
+        if try_it:
+            tryit(nlp)
                 
             
-#         if explore_flag:
-#             st.markdown(f"""**Dataset Length: {len(results)}** """)
-#             start, end = st.slider(
-#                 label = 'Data View Select',
-#                 min_value = 0,
-#                 max_value = len(nlp.doc)-1,
-#                 value = (0,5)
-#             )
-#             st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
-#             for i in range(int(start),int(end)+1):
-#                 st.markdown(f"""{i}. {'Label:':>10} {str(nlp.doc.loc[i,'label'])}  Pred: {str(nlp.doc.loc[i,'cluster'])}    {str(nlp.doc.loc[i,'student_answer'])}""")
+        if explore_flag:
+            st.markdown(f"""**Dataset Length: {len(results)}** """)
+            start, end = st.slider(
+                label = 'Data View Select',
+                min_value = 0,
+                max_value = len(nlp.doc)-1,
+                value = (0,5)
+            )
+            st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
+            for i in range(int(start),int(end)+1):
+                st.markdown(f"""{i}. {'Label:':>10} {str(doc.loc[i,'label'])}  Pred: {str(doc.loc[i,'prediction'])}    {str(doc.loc[i,'student_answer'])}""")
                 
 def tryit(nlp):
     st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
@@ -310,3 +316,20 @@ def tryit(nlp):
             st.markdown(f'## **Your answer is predicted {pred}**')
             
         st.write(nlp.new_answers)
+
+        
+def application():
+    st.markdown("## **Master's Project**")
+    st.markdown('---')
+    st.markdown("# **Unsupervised Learning | Combination**")
+    file = st.file_uploader("Upload your csv file", type='csv')
+    show_file = st.empty()
+    if not file:
+        show_file.info("Please upload a csv file")
+        return
+    
+    df = pd.read_csv(
+        file
+    )
+    st.write(df)
+    pass
