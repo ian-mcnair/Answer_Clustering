@@ -130,7 +130,7 @@ def clustering():
         scores['Cohens Kappa'] = round(nlp.kappa(), 3)
         scores = pd.DataFrame.from_dict(scores, orient = 'index').transpose()
         scores.rename(index = {0:"Scores"}, inplace = True)
-        st.write(scores)
+        st.table(scores)
         
         
         st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
@@ -204,7 +204,7 @@ def classification():
         scores['Cohens Kappa'] = round(nlp.kappa(), 3)
         scores = pd.DataFrame.from_dict(scores, orient = 'index').transpose()
         scores.rename(index = {0:"Scores"}, inplace = True)
-        st.write(scores)
+        st.table(scores)
         
         st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc.label, nlp.doc.prediction))
         
@@ -274,12 +274,12 @@ def combo():
 
         scores = {}
         scores['Accuracy'] = round(nlp.accuracy(),3)
-        scores['Balanced Accuract'] = round(nlp.balanced_accuracy(), 3)
+        scores['Balanced Accuracy'] = round(nlp.balanced_accuracy(), 3)
         scores['F1 Score'] = round(nlp.f1_scorer(), 3)
         scores['Cohens Kappa'] = round(nlp.kappa(), 3)
         scores = pd.DataFrame.from_dict(scores, orient = 'index').transpose()
         scores.rename(index = {0:"Scores"}, inplace = True)
-        st.write(scores)
+        st.table(scores)
 
         
         st.pyplot(fig = charts.plot_confusion_matrix(nlp.y_true, nlp.y_pred))
