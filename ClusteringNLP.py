@@ -19,7 +19,6 @@ class Clustering_NLP:
         self.new_answers = pd.DataFrame(columns = self.doc.columns.tolist() + self.data.columns.tolist())
         self.new_answers.drop(['label','question_id'], axis = 1, inplace=True)
         self.word_scaler = self.create_scaler(self.doc, 'student_answer', sf.word_count)
-#         self.sent_scaler = self.create_scaler(self.doc, 'student_answer', sf.sentence_count)
         self.flag = False # Used to flip the cluster label so that it returns the right way
         
     def create_scaler(self, df, col, func):
@@ -32,14 +31,12 @@ class Clustering_NLP:
         self.model = model.fit(X)
         self.doc['cluster'] = model.labels_
     
-    
     def correct_cluster_labels(self):
         """
         Assumes last row is teachers answer
         """
         correct_label = self.doc.tail(1).label.values[0]
         cluster_label = self.doc.tail(1).cluster.values[0]
-#         print(f'correct {correct_label}- {cluster_label}')
         if correct_label != cluster_label:
             self.doc['cluster'] = (self.doc['cluster'] - 1)**2
             self.flag = True

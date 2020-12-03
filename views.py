@@ -92,7 +92,6 @@ def clustering():
     st.markdown("# **Unsupervised Learning | Clustering**")
     
     st.markdown("### Choose a Dataset")
-#     files = tools.get_files()
     option = st.selectbox(
         'Select a Teacher Answer',
         files['name']
@@ -108,9 +107,7 @@ def clustering():
     st.markdown('**Select the below based on what you want to see:**')
     chart_flag = st.checkbox('Display Reduced-Dimensionality Chart')
     model_flag = st.checkbox('Display Model Info and Performance')    
-    
-    nlp = 0
-    
+        
     nlp = Clustering_NLP(data, doc)
     nlp.correct_cluster_labels()
     
@@ -126,10 +123,16 @@ def clustering():
 
     if model_flag:
         st.markdown('## Model Data Metrics') 
-        st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
-        st.markdown(f'### **Balanced Accuracy of Model: {round(nlp.balanced_accuracy(), 3)}**  ')
-        st.markdown(f'### **F1 Score of Model: {round(nlp.f1_scorer(), 3)}**  ')
-        st.markdown(f'### **Cohens Kappa of Model: {round(nlp.kappa(), 3)}**  ')
+        scores = {}
+        scores['Accuracy'] = round(nlp.accuracy(),3)
+        scores['Balanced Accuract'] = round(nlp.balanced_accuracy(), 3)
+        scores['F1 Score'] = round(nlp.f1_scorer(), 3)
+        scores['Cohens Kappa'] = round(nlp.kappa(), 3)
+        scores = pd.DataFrame.from_dict(scores, orient = 'index').transpose()
+        scores.rename(index = {0:"Scores"}, inplace = True)
+        st.write(scores)
+        
+        
         st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc['label'], nlp.doc.cluster))
         
         
@@ -137,7 +140,7 @@ def clustering():
         try_it = st.checkbox('Try it Yourself!')
         explore_flag = st.checkbox('Explore Data')
         if try_it:
-            tryit(nlp)
+            tryit(nlp, 'cluster')
                 
             
         if explore_flag:
@@ -193,12 +196,15 @@ def classification():
         st.pyplot(fig = charts.plot_logistic_function(nlp, test_size))
     if model_flag:
         st.markdown('## Model Data Metrics')
-        
+        scores = {}
         _, accuracy =  nlp.accuracy()
-        st.markdown(f'### **Test Set Accuracy of Model: {round(accuracy, 3)}**  ')
-        st.markdown(f'### **Balanced Accuracy of Model: {round(nlp.balanced_accuracy(), 3)}**  ')
-        st.markdown(f'### **F1 Score of Model: {round(nlp.f1_scorer(), 3)}**  ')
-        st.markdown(f'### **Cohens Kappa of Model: {round(nlp.kappa(), 3)}**  ')
+        scores['Accuracy'] = round(accuracy,3)
+        scores['Balanced Accuract'] = round(nlp.balanced_accuracy(), 3)
+        scores['F1 Score'] = round(nlp.f1_scorer(), 3)
+        scores['Cohens Kappa'] = round(nlp.kappa(), 3)
+        scores = pd.DataFrame.from_dict(scores, orient = 'index').transpose()
+        scores.rename(index = {0:"Scores"}, inplace = True)
+        st.write(scores)
         
         st.pyplot(fig = charts.plot_confusion_matrix(nlp.doc.label, nlp.doc.prediction))
         
@@ -208,7 +214,7 @@ def classification():
         explore_flag = st.checkbox('Explore Data')
         
         if try_it:
-            tryit(nlp)
+            tryit(nlp, 'prediction')
         if explore_flag:
             st.markdown(f"""**Dataset Length: {len(results)}** """)
             start, end = st.slider(
@@ -250,14 +256,13 @@ def combo():
     
     nlp = 0
     
-    nlp = Cluster_and_Classify(data, doc)
+    nlp = Cluster_and_Classify(data, doc, len(data)-1)
     nlp.run()
-    
     
     if chart_flag:
         col1, col2 = st.beta_columns(2)
-        fig1, ax1 = charts.plot_pca_chart(nlp.X_train, nlp.y_train, nlp.model.cluster_centers_)
-        fig2, ax2 = charts.plot_tsne_chart(nlp.X_train, nlp.y_train, nlp.model.cluster_centers_)
+        fig1, ax1 = charts.plot_pca_chart(nlp.X_train, nlp.y_train, data.iloc[-1,:].values.reshape(1,-1))
+        fig2, ax2 = charts.plot_tsne_chart(nlp.X_train, nlp.y_train, data.iloc[-1,:].values.reshape(1,-1), num_clusters = 1)
         with col1:
             st.pyplot(fig = fig1)
             
@@ -265,23 +270,27 @@ def combo():
             st.pyplot(fig = fig2)
 
     if model_flag:
-        st.markdown('## Model Data Metrics') 
-        st.markdown(f'### **Accuracy of Model: {round(nlp.accuracy(),3)}**  ')
-        st.markdown(f'### **Balanced Accuracy of Model: {round(nlp.balanced_accuracy(), 3)}**  ')
-        st.markdown(f'### **F1 Score of Model: {round(nlp.f1_scorer(), 3)}**  ')
-        st.markdown(f'### **Cohens Kappa of Model: {round(nlp.kappa(), 3)}**  ')
+        st.markdown('## Model Data Metrics')
+
+        scores = {}
+        scores['Accuracy'] = round(nlp.accuracy(),3)
+        scores['Balanced Accuract'] = round(nlp.balanced_accuracy(), 3)
+        scores['F1 Score'] = round(nlp.f1_scorer(), 3)
+        scores['Cohens Kappa'] = round(nlp.kappa(), 3)
+        scores = pd.DataFrame.from_dict(scores, orient = 'index').transpose()
+        scores.rename(index = {0:"Scores"}, inplace = True)
+        st.write(scores)
+
+        
         st.pyplot(fig = charts.plot_confusion_matrix(nlp.y_true, nlp.y_pred))
         
-        
         doc['prediction'] = nlp.y_pred
-#         st.write(doc)
         results = doc[['student_answer', 'label', 'prediction']]
         try_it = st.checkbox('Try it Yourself!')
         explore_flag = st.checkbox('Explore Data')
         if try_it:
-            tryit(nlp)
+            tryit(nlp, 'prediction')
                 
-            
         if explore_flag:
             st.markdown(f"""**Dataset Length: {len(results)}** """)
             start, end = st.slider(
@@ -294,7 +303,7 @@ def combo():
             for i in range(int(start),int(end)+1):
                 st.markdown(f"""{i}. {'Label:':>10} {str(doc.loc[i,'label'])}  Pred: {str(doc.loc[i,'prediction'])}    {str(doc.loc[i,'student_answer'])}""")
                 
-def tryit(nlp):
+def tryit(nlp, pred_type):
     st.markdown(f"""**Teacher Answer: {nlp.doc['teacher_answer'].values[0]}**""")
     answer = st.text_input("Submit Your Own Answer")
     if answer != '':
@@ -303,33 +312,86 @@ def tryit(nlp):
         Weird issue where a random dataset gets injected into it
         maybe an object or caching issue?
         """
-        nlp.score_new_sentences(nlp.new_answers.iloc[:, 7:])
-        prediction = nlp.new_answers.iloc[0,6]
+        nlp.score_new_sentences(nlp.new_answers.loc[:, 'wordcount':])
+        prediction = nlp.new_answers.loc[0,pred_type]
         pred = ''
         if prediction == 1:
             pred = 'correct'
-            st.balloons()
         else:
             pred = "incorrect"
         
         if pred != '':
             st.markdown(f'## **Your answer is predicted {pred}**')
-            
-        st.write(nlp.new_answers)
+        
+        st.markdown('----')
+        st.markdown('Breakdown of your answer:')
+        st.write(nlp.new_answers.rename({0:"Your Answer"}))
 
         
 def application():
     st.markdown("## **Master's Project**")
     st.markdown('---')
-    st.markdown("# **Unsupervised Learning | Combination**")
+    st.markdown("# **Autograders**")
+   
+    st.markdown('## Choose your model')
+    
+    
+    
+    option = st.selectbox(
+        'Model Type',
+        ['Clustering', 'Classification', 'Combination']
+    )
+#     answer_row = st.number_input('Which row is your answer on?', value = 0, step = 1, format= '%i')
+#     test_size = 0    
+#     if option == 'Classification':
+#         test_size = st.number_input('Number of Labeled Questions', value = 0, step = 1, format = '%i')
+
+    st.markdown('### **Please fill out all the above first before selecting your file**')
     file = st.file_uploader("Upload your csv file", type='csv')
+        
     show_file = st.empty()
     if not file:
         show_file.info("Please upload a csv file")
         return
-    
-    df = pd.read_csv(
-        file
-    )
-    st.write(df)
-    pass
+    else:
+        file.seek(0)
+        doc, data = tools.generate_features(file)
+        predictions = []
+        if option == 'Clustering':
+            nlp = Clustering_NLP(data, doc)
+            nlp.correct_cluster_labels()
+            st.write(nlp.doc)
+            predictions = nlp.doc['cluster']
+
+        if option == 'Classification':
+            nlp = Classification_NLP(data, doc)
+            predictions = nlp.model.predict(data)
+        if option == 'Combination':
+            nlp = Cluster_and_Classify(data, doc, len(data)-1)
+            nlp.run()
+            predictions = nlp.y_pred
+
+        doc['prediction'] = predictions
+        doc = doc[['student_answer', 'prediction']]
+        st.markdown('## **Model Results**')
+        st.table(doc)
+        csv = doc.to_csv(index = False)
+        b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
+        href = f'<a href="data:file/csv;base64,{b64}">Download CSV File</a> (right-click and save as &lt;some_name&gt;.csv)'
+        st.markdown(href, unsafe_allow_html=True)
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

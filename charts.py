@@ -35,10 +35,10 @@ def plot_confusion_matrix(true, pred):
 
 
 def plot_pca_chart(data, labels, cluster_centers):
-
     pca = PCA(n_components = 2)
     comps = pca.fit_transform(data)
     cluster_centers = pca.transform(cluster_centers)
+
     fig, ax = plt.subplots()
     ax = sns.scatterplot(
         x = cluster_centers[:,0],
@@ -50,19 +50,18 @@ def plot_pca_chart(data, labels, cluster_centers):
     ax = sns.scatterplot(
         x = comps[:,0],
         y = comps[:,1],
-        hue= labels,
+        hue = labels,
     )
    
     ax.set_title("PCA Cluster Plot")
     
     return fig, ax
 
-def plot_tsne_chart(data, labels, cluster_centers):
+def plot_tsne_chart(data, labels, cluster_centers, num_clusters = 2):
     tsne = TSNE(n_components = 2,perplexity = 5)
     data = tsne.fit_transform(data.append(pd.DataFrame(cluster_centers, columns = data.columns)))
-    cluster_centers = data[-2:,:].copy()
-    data = data[:-2,:].copy()
-                              
+    cluster_centers = data[-(num_clusters):,:].copy()
+    data = data[:-(num_clusters),:].copy()
     fig, ax = plt.subplots()
     ax = sns.scatterplot(
         x = cluster_centers[:,0],
@@ -71,11 +70,11 @@ def plot_tsne_chart(data, labels, cluster_centers):
         s= 250,
         marker = '8'
     )
-    
+
     ax = sns.scatterplot(
         x = data[:,0],
         y = data[:,1],
-        hue= labels,
+        hue = labels,
     )
     
     ax.set_title("t-SNE Visualization")

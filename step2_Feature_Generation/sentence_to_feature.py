@@ -28,6 +28,7 @@ List of Working Features:
     - Trigram
     
 """
+import streamlit as st
 # Data
 import pandas as pd
 
@@ -226,6 +227,7 @@ def create_list_of_trigrams(sentence):
 ################### Transforming ####################
 def scale_column(df, col):
     sc = MinMaxScaler()
+    st.write(df)
     return sc.fit_transform(df[col].values.reshape(-1,1))
 
 ################### Feature Reduction ####################
