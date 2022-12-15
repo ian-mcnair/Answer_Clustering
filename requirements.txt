@@ -115,7 +115,7 @@ tornado==6.0.4
 tqdm==4.51.0
 traitlets==5.0.5
 tzlocal==2.1
-urllib3==1.25.11 ; python_version != '3.4'
+urllib3==1.26.5 ; python_version != '3.4'
 validators==0.18.1
 wasabi==0.8.0
 watchdog==0.10.3
