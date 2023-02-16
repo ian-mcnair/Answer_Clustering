@@ -121,6 +121,6 @@ wasabi==0.8.0
 watchdog==0.10.3
 wcwidth==0.2.5
 webencodings==0.5.1
-werkzeug==1.0.1
+werkzeug==2.2.3
 widgetsnbextension==3.5.1
 xlrd==1.2.0
